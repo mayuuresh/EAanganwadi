@@ -27,7 +27,7 @@ public class About extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
-                myWebLink.setData(Uri.parse("http://www.instagram.com"));
+                myWebLink.setData(Uri.parse("https://wcd.nic.in/schemes/poshan-abhiyaan"));
                 startActivity(myWebLink);
             }
         });
@@ -36,7 +36,7 @@ public class About extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
-                myWebLink.setData(Uri.parse("http://www.facebook.com"));
+                myWebLink.setData(Uri.parse("https://www.facebook.com/p/Poshan-Abhiyaan-100063707834375/"));
                 startActivity(myWebLink);
             }
         });
@@ -45,7 +45,7 @@ public class About extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myWebLink = new Intent(android.content.Intent.ACTION_VIEW);
-                myWebLink.setData(Uri.parse("http://www.twitter.com"));
+                myWebLink.setData(Uri.parse("https://twitter.com/POSHAN_Official?t=RohAk97L4vH_uEGaqQ3MFA&s=09"));
                 startActivity(myWebLink);
             }
         });
