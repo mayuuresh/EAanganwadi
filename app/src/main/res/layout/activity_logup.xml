@@ -5,55 +5,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bthre"
+    android:background="@color/pink"
     android:padding="16dp"
     android:gravity="center"
     tools:context=".Logup">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
+        android:layout_height="705dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="-50dp"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
         tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            app:srcCompat="@drawable/logo" />
+
         <ImageView
             android:id="@+id/profile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="82dp"
+            android:layout_height="77dp"
             android:background="@drawable/round_background"
             android:padding="15dp"
             android:src="@drawable/add"
             tools:ignore="ContentDescription" />
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailError"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            app:hintAnimationEnabled="true"
             android:textColorHint="@color/black"
-            app:hintTextColor="@color/black"
-            app:boxStrokeColor="@color/black">
+            app:boxStrokeColor="@color/black"
+            app:hintAnimationEnabled="true"
+            app:hintTextColor="@color/black">
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="@string/prompt_email"
-                android:textSize="20sp"
+                android:background="@android:color/transparent"
                 android:fontFamily="@font/opensans"
+                android:hint="@string/phone"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:background="@android:color/transparent"
+                android:singleLine="true"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
-                android:singleLine="true"/>
+                android:textSize="20sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,29 +69,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            app:passwordToggleEnabled="true"
-            app:hintAnimationEnabled="true"
             android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintAnimationEnabled="true"
             app:hintTextColor="@color/black"
-            app:boxStrokeColor="@color/black">
+            app:passwordToggleEnabled="true">
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="@string/prompt_password"
+                android:background="@android:color/transparent"
                 android:fontFamily="@font/opensans"
-                android:textSize="20sp"
+                android:hint="@string/prompt_password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:background="@android:color/transparent"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
-                android:maxLines="1"
-                android:singleLine="true" />
+                android:textSize="20sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/ForgotMPIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/opensans"
+            android:gravity="center"
+            android:text="Forgot MPIN"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
         <Button
             android:id="@+id/login"
@@ -96,16 +114,29 @@
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
+
         <TextView
             android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/opensans"
             android:gravity="center"
             android:text="@string/create_new"
-            android:textColor="@color/white"
-            android:fontFamily="@font/opensans"
+            android:textColor="@color/black"
             android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/issue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/opensans"
+            android:gravity="center"
+            android:text="Have a Issue ? Click Here!!"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </LinearLayout>
