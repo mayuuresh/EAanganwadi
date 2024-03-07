@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/pink"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -15,11 +15,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Dashboard"
+            android:text="Welcome to"
+            android:fontFamily="@font/opensans"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POSHAN Tracker"
             android:fontFamily="@font/opensans"
             android:textSize="24sp"
-            android:textColor="@color/white"
-            android:layout_margin="20dp"/>
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"/>
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -37,21 +46,21 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/gray"
+                app:cardBackgroundColor="@color/whiteish"
                 android:layout_margin="10dp">
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/donate"
+                        android:src="@drawable/pregnant"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="15dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Donate"
+                        android:text="PREGNANT WOMEN"
                         android:fontFamily="@font/opensans"
-                        android:textSize="18dp"
-                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
                         android:layout_marginTop="130dp"
                         android:layout_gravity="center_horizontal" />
             </androidx.cardview.widget.CardView>
@@ -63,21 +72,21 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/gray"
+                app:cardBackgroundColor="@color/whiteish"
                 android:layout_margin="10dp">
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/rcv"
+                        android:src="@drawable/lactating"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="15dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Receive"
+                        android:text="LACTATING MOTHERS"
                         android:fontFamily="@font/opensans"
-                        android:textSize="18dp"
-                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textColor="@color/black"
                         android:layout_marginTop="130dp"
                         android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
@@ -89,24 +98,34 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/gray"
+                app:cardBackgroundColor="@color/whiteish"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/map"
+                    android:src="@drawable/child6"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Food Map"
+                    android:text="CHILDREN"
                     android:fontFamily="@font/opensans"
-                    android:textSize="18dp"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="130dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="125dp"
                     android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 months-6 months"
+                    android:fontFamily="@font/opensans"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="145dp"
+                    android:layout_gravity="center_horizontal"/>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -116,23 +135,33 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/gray"
+                app:cardBackgroundColor="@color/whiteish"
                 android:layout_margin="10dp">
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/mypins"
+                    android:src="@drawable/child3y"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="My Pins"
+                    android:text="CHILDREN"
                     android:fontFamily="@font/opensans"
-                    android:textSize="18dp"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="130dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="125dp"
                     android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 months-3 years"
+                    android:fontFamily="@font/opensans"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="145dp"
+                    android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -142,23 +171,33 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/gray"
+                app:cardBackgroundColor="@color/whiteish"
                 android:layout_margin="10dp">
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/history"
+                    android:src="@drawable/child6y"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="History"
+                    android:text="CHILDREN"
                     android:fontFamily="@font/opensans"
-                    android:textSize="18dp"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="130dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="125dp"
                     android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 years-6 years"
+                    android:fontFamily="@font/opensans"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="145dp"
+                    android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -168,22 +207,22 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/gray"
+                app:cardBackgroundColor="@color/whiteish"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/about"
+                    android:src="@drawable/adolescent"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="About Us"
+                    android:text="ADOLESCENT GIRLS"
                     android:fontFamily="@font/opensans"
-                    android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
@@ -195,22 +234,22 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/gray"
+                app:cardBackgroundColor="@color/whiteish"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/contact"
+                    android:src="@drawable/adolescentboy"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contact Us"
+                    android:text="ADOLESCENT BOYS"
                     android:fontFamily="@font/opensans"
-                    android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
@@ -222,22 +261,22 @@
                 android:layout_height="165dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="@color/gray"
+                app:cardBackgroundColor="@color/whiteish"
                 android:layout_margin="10dp">
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/lgout"
+                    android:src="@drawable/daily"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Log Out"
+                    android:text="DAILY TRACKING"
                     android:fontFamily="@font/opensans"
-                    android:textSize="18dp"
-                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
                     android:layout_marginTop="130dp"
                     android:layout_gravity="center_horizontal"/>
             </androidx.cardview.widget.CardView>
