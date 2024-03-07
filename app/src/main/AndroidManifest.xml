@@ -28,7 +28,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBtAubRGSlTZanGLTPT3JrKWsRCFAXZzrE" />
 
-        <activity android:name=".Receive" />
+        <activity android:name=".Preganent_Nutrition" />
         <activity android:name=".Contact" />
         <activity android:name=".Signup" />
         <activity android:name=".Logup" />
