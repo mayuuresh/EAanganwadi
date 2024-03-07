@@ -1,5 +1,5 @@
 <resources>
-    <string name="welcome">Welcome to AAHAR</string>
+    <string name="welcome">Welcome to Poshan Abhiyaan</string>
     <string name="app_name">AAHAR APP</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

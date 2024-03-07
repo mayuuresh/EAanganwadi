@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AAHAARAPP"
         tools:ignore="AllowBackup">
-        <activity android:name=".UserdataActivity"></activity>
+        <activity android:name=".UserdataActivity" />
         <activity android:name=".History" />
         <activity android:name=".MyPin" />
         <activity android:name=".About" />
@@ -37,6 +37,7 @@
         <activity android:name=".landingpage" />
         <activity
             android:name=".SplashScreen"
+            android:exported="true"
             android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
