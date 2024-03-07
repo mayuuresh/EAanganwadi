@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="816dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="-50dp"
         android:layout_marginRight="10dp"
@@ -20,11 +20,21 @@
         tools:ignore="UselessParent">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/imageView2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp"
             app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Register Your Account"
+            android:textColor="#ffcc0000"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/nameError"
@@ -43,7 +53,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/opensans"
-                android:hint="@string/name"
+                android:hint="@string/Mobile_No"
                 android:importantForAutofill="no"
                 android:inputType="textNoSuggestions"
                 android:maxLines="1"
@@ -71,7 +81,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/opensans"
-                android:hint="@string/prompt_email"
+                android:hint="@string/mpin"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
@@ -99,7 +109,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/opensans"
-                android:hint="@string/phone_number"
+                android:hint="@string/ReEnter"
                 android:importantForAutofill="no"
                 android:inputType="phone"
                 android:maxLength="13"
@@ -111,44 +121,18 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passError"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/black"
-            app:hintAnimationEnabled="true"
-            app:hintTextColor="@color/black"
-            app:passwordToggleEnabled="true">
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/opensans"
-                android:hint="@string/prompt_password"
-                android:importantForAutofill="no"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textSize="20sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
             android:id="@+id/register"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="63dp"
             android:layout_margin="20dp"
-            android:background="@color/red"
+            android:background="@drawable/rounded_button"
             android:text="@string/register"
             android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:textColorHint="#BC3434"
+            android:textSize="16sp"
+            app:backgroundTint="#ffcc0000"
+            app:cornerRadius="3dp" />
 
         <TextView
             android:id="@+id/login"
@@ -158,9 +142,19 @@
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/opensans"
             android:gravity="center"
+
             android:text="\nAlready have an account? Login\n"
             android:textColor="@color/black"
-            android:textSize="17sp" />
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="By sing in/Register,I agree to the\n terms Of Service and Privacy Policy\n\n"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </LinearLayout>
