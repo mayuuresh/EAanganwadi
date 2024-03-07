@@ -12,16 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/pink"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="Pregnant Women"
-            app:titleTextAppearance="@style/ToolbarTitle" />
+
 
         <TextView
             android:id="@+id/textViewDateTime"
@@ -47,9 +38,7 @@
              android:background="@drawable/bordered_edittext"
              android:layout_marginTop="15dp"
              android:layout_marginLeft="8dp"
-             android:layout_marginRight="8dp"
-
-             >
+             android:layout_marginRight="8dp">
              <TextView
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
@@ -77,8 +66,7 @@
                      android:id="@+id/radioButtonInch"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:text="Inch"
-                     android:textStyle="bold" />
+                     android:text="Inch" />
 
                  <RadioButton
                      android:id="@+id/radioCM"
@@ -130,8 +118,9 @@
                  android:layout_margin="10dp"
                  android:text="Hemoglobin (g/dL)"
                  android:textColor="@color/cardview_dark_background"
+                 android:textSize="17dp"
                  android:textStyle="bold"
-                 android:textSize="17dp"/>
+                 tools:ignore="TextSizeCheck" />
 
              <EditText
                  android:id="@+id/hemoglobin"
