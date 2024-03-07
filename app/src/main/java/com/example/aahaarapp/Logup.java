@@ -22,7 +22,9 @@ public class Logup extends AppCompatActivity {
 
     EditText mEmail,mPassword;
     Button mLoginBtn;
-    TextView mRegisterBtn;
+    TextView mRegisterBtn,forgotMpin,issue;
+
+
     FirebaseAuth fAuth;
 
     @Override
@@ -34,6 +36,8 @@ public class Logup extends AppCompatActivity {
         mPassword = findViewById(R.id.password);
         mRegisterBtn = findViewById(R.id.register);
         mLoginBtn = findViewById(R.id.login);
+        forgotMpin=findViewById(R.id.ForgotMPIN);
+        issue=findViewById(R.id.issue);
 
         fAuth=FirebaseAuth.getInstance();
 
@@ -89,6 +93,23 @@ public class Logup extends AppCompatActivity {
             public void onClick(View v) {
                 // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), Signup.class);
+                startActivity(intent);
+            }
+        });
+
+        forgotMpin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to RegisterActivity
+                Intent intent = new Intent(getApplicationContext(), ForgotIssue.class);
+                startActivity(intent);
+            }
+        });
+        issue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // redirect to RegisterActivity
+                Intent intent = new Intent(getApplicationContext(), Issue.class);
                 startActivity(intent);
             }
         });

@@ -35,6 +35,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Donate" />
         <activity android:name=".landingpage" />
+        <activity android:name=".Issue" />
+        <activity android:name=".ForgotIssue" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"
