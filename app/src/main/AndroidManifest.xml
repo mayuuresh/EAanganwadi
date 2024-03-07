@@ -37,6 +37,8 @@
         <activity android:name=".landingpage" />
         <activity android:name=".Issue" />
         <activity android:name=".ForgotIssue" />
+        <activity android:name=".Pregnent_add"/>
+
         <activity
             android:name=".SplashScreen"
             android:exported="true"
