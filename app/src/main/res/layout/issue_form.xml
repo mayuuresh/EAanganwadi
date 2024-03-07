@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".issue"
+        android:background="#EA8181"
+        >
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@android:color/holo_red_dark"
+            android:gravity="center_horizontal"
+            android:text="Issue Form"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="461dp"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:layout_marginLeft="50dp"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/nameI"
+            android:layout_width="349dp"
+            android:layout_height="48dp"
+            android:hint="@string/name"
+            android:inputType="number"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/phone"
+            android:layout_marginLeft="20dp"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/numberI"
+            android:layout_width="349dp"
+            android:layout_height="48dp"
+
+            android:hint="@string/Mobile_No"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/prompt_email"
+            android:layout_marginLeft="20dp"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/emailI"
+            android:layout_width="352dp"
+            android:layout_height="49dp"
+            android:hint="@string/prompt_email" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="\n     Subject(50 character)"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/subjectI"
+            android:layout_width="349dp"
+            android:layout_height="48dp"
+
+            android:hint="@string/subject"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="\n     Explain your issue in brif\n     (250 character)"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/issueI"
+            android:layout_width="346dp"
+            android:layout_height="125dp"
+            android:hint="@string/issue" />
+
+        <Button
+            android:id="@+id/submitI"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_margin="25dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:text="SUBMIT"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+</ScrollView>
