@@ -21,22 +21,35 @@ import com.google.firebase.auth.FirebaseUser;
 public class Signup extends AppCompatActivity {
 
 
-    EditText email1,pass1,repass1;
-    Button register,login;
-    FirebaseAuth mAuth;
+    EditText mobile1,pass1,repass1;
+    Button register;
+    String email,pass,repass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        mAuth =FirebaseAuth.getInstance();
-        email1=findViewById(R.id.mobile);
+        mobile1=findViewById(R.id.mobile);
         pass1=findViewById(R.id.mpin);
         repass1=findViewById(R.id.reMpin);
-        String email=email1.getText().toString();
-        String pass=pass1.getText().toString();
-        String repass=repass1.getText().toString();
-
-
-
+        register=findViewById((R.id.register));
+        MyDBHeplerRegister helper = new MyDBHeplerRegister(this);
+        
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email=mobile1.getText().toString();
+                String pass=pass1.getText().toString();
+                String repass=repass1.getText().toString();
+                
+                if(pass.equals(repass)){
+                    helper.registeruser(email,pass);
+                    Toast.makeText(Signup.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(Signup.this, "Enter the same MPIN", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

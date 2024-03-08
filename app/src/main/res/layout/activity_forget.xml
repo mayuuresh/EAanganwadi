@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#F6BBBB"
+    android:layout_height="match_parent"
+    android:background="@color/pink"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".ForgotIssue">
+    tools:context=".ForgotIssue"
+    >
 
     <ImageView
         android:layout_width="250dp"
@@ -31,11 +32,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="     Mobile Number"
-        android:textSize="24dp"
+        android:gravity="center_horizontal"
+        android:text="Mobile Number"
         android:textAlignment="center"
-        android:textStyle="bold"
-        android:gravity="center_horizontal" />
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <EditText
         android:layout_width="311dp"
@@ -54,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30px"
         android:inputType="number"
-        android:text="Enter New Password"
+        android:text="Enter New MPIN"
         android:textAlignment="center"
         android:textSize="24dp"
         android:textStyle="bold"
