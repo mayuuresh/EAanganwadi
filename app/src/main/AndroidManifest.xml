@@ -10,6 +10,11 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Required to write to external storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Required to write to internal storage -->
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -18,22 +23,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AAHAARAPP"
         tools:ignore="AllowBackup">
-        <activity android:name=".UserdataActivity" />
-        <activity android:name=".History" />
-        <activity android:name=".MyPin" />
+
         <activity android:name=".About" />
-        <activity android:name=".FoodMap" />
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBtAubRGSlTZanGLTPT3JrKWsRCFAXZzrE" />
 
         <activity android:name=".Preganent_Nutrition" />
-        <activity android:name=".Contact" />
+
         <activity android:name=".Signup" />
         <activity android:name=".Logup" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Donate" />
         <activity android:name=".landingpage" />
         <activity android:name=".Issue" />
         <activity android:name=".ForgotIssue" />
