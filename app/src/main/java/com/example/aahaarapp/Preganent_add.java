@@ -8,7 +8,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 class Preganent_add extends AppCompatActivity {
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pregnant_add);
     }
