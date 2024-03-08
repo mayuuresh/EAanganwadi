@@ -90,12 +90,13 @@
                  android:id="@+id/radioheight"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:orientation="vertical">
+                 android:orientation="horizontal">
 
                  <RadioButton
                      android:id="@+id/radioButtonInch"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
+                     android:layout_marginEnd="30dp"
                      android:text="Inch" />
 
                  <RadioButton

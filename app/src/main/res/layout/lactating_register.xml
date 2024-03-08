@@ -34,7 +34,7 @@
                 android:layout_width="341dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Pregnant Woman"
+                android:text="Lactating Mother"
                 android:gravity="center"
                 android:textSize="25sp"
                 android:textStyle="bold"
@@ -87,7 +87,7 @@
 
             android:hint="Enter Birth Date"
             android:importantForAutofill="no"
-            android:inputType="text"
+            android:inputType="date"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -109,12 +109,9 @@
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bordered_edittext"
-
-
             android:hint="Enter Birth Year"
             android:importantForAutofill="no"
             android:inputType="number"
-
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -142,39 +139,28 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/opensans"
-            android:text="Is this your first pregnancy?"
+            android:text="Delivery Date"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
 
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordered_edittext"
 
-            <RadioButton
-                android:id="@+id/radioButtonOption1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:layout_marginEnd="30dp"/>
+            android:hint="Enter Delivery Date"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="UnusedAttribute" />
 
-            <RadioButton
-                android:id="@+id/radioButtonOption2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
-
-            <!-- Add more radio buttons as needed -->
-        </RadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
@@ -182,7 +168,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/opensans"
-            android:text="Have you miscarried before?"
+            android:text="Infant Gender"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
@@ -197,7 +183,7 @@
                 android:id="@+id/radioButtonOption3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yes"
+                android:text="M"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:layout_marginEnd="30dp"/>
@@ -206,11 +192,9 @@
                 android:id="@+id/radioButtonOption4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No"
+                android:text="F"
                 android:textSize="20sp"
                 android:textColor="@color/black"/>
-
-            <!-- Add more radio buttons as needed -->
         </RadioGroup>
 
         <Button
