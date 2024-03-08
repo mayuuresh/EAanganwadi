@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Issue">
+    tools:context=".Issue"
+    android:background="@color/pink">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,26 +29,28 @@
         <TextView
             android:layout_width="461dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
             android:text="@string/name"
-            android:layout_marginLeft="50dp"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/nameI"
             android:layout_width="349dp"
             android:layout_height="48dp"
             android:hint="@string/name"
-            android:inputType="number"
+            android:inputType="text"
             android:layout_marginBottom="20dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/phone"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="15dp"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/numberI"
@@ -61,9 +64,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/prompt_email"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="15dp"
             android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/emailI"
@@ -76,8 +80,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="\n     Subject(50 character)"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="-12dp"
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/subjectI"
@@ -91,8 +97,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="\n     Explain your issue in brif\n     (250 character)"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="-14dp"
+            android:textSize="30dp"/>
 
         <EditText
             android:id="@+id/issueI"

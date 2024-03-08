@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical">
+    <!--    tools:context=".Pregnent_add"-->
 
 
     <LinearLayout
@@ -32,7 +33,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="5dp"
             android:gravity="center"
-            android:text="Lactating Mothers List"
+            android:text="Children 0 month - 6 month"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -73,7 +74,7 @@
                 android:layout_height="48dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginRight="4dp"
-                android:text="Button"
+                android:text="Update"
                 app:backgroundTint="#D37B7B"
                 app:layout_constraintBottom_toTopOf="@+id/button4"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +135,7 @@
                 android:id="@+id/button4"
                 android:layout_width="131dp"
                 android:layout_height="48dp"
-                android:text="Button"
+                android:text="View"
                 app:backgroundTint="#D37B7B"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/button3"
@@ -143,5 +144,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 
 </LinearLayout>
