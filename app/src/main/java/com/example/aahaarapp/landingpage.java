@@ -34,7 +34,7 @@ public class landingpage extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Logup.class));
+                startActivity(new Intent(getApplicationContext(), Pregnant_add.class));
             }
         });
         register.setOnClickListener(new View.OnClickListener ()
