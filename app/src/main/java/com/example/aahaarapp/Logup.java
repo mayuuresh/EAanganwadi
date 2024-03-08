@@ -32,7 +32,7 @@ public class Logup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logup);
 
-        mEmail = findViewById(R.id.email);
+        mEmail = findViewById(R.id.mpin);
         mPassword = findViewById(R.id.password);
         mRegisterBtn = findViewById(R.id.register);
         mLoginBtn = findViewById(R.id.login);

@@ -47,7 +47,7 @@
             app:hintTextColor="@color/black">
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/mpin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
