@@ -5,14 +5,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Issue">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/pink"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".issue"
-        android:background="@color/pink"
-        >
+        tools:context=".issue">
 
         <TextView
             android:id="@+id/textView14"
@@ -28,8 +28,8 @@
         <TextView
             android:layout_width="461dp"
             android:layout_height="wrap_content"
-            android:text="@string/name"
             android:layout_marginLeft="50dp"
+            android:text="@string/name"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -37,15 +37,15 @@
             android:id="@+id/nameI"
             android:layout_width="349dp"
             android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
             android:hint="@string/name"
-            android:inputType="number"
-            android:layout_marginBottom="20dp"/>
+            android:inputType="number" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/phone"
             android:layout_marginLeft="20dp"
+            android:text="@string/phone"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -60,8 +60,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/prompt_email"
             android:layout_marginLeft="20dp"
+            android:text="@string/prompt_email"
             android:textSize="30dp"
             android:textStyle="bold" />
 
