@@ -35,7 +35,7 @@ public class Issue extends AppCompatActivity {
                 str_subject=subject.getText().toString();
                 str_issue=issue.getText().toString();
 
-                helper.addNewCourse("zhava", "10mon", "hello", "World");
+                helper.addNewCourse(str_name,str_mobile,str_email,str_subject,str_issue);
 
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(Issue.this, "Data Inserted", Toast.LENGTH_SHORT).show();
