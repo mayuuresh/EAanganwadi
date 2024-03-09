@@ -27,9 +27,6 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
     private static final String Health_Service = "healthService";
 
 
-
-
-
     public MyDBHelperLactatingMother(@Nullable Context context) {
         super(context,DB_NAME,null,DB_VERSION);
     }
@@ -57,10 +54,10 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put(Mobile_number, mobile);
         values.put(Name, name);
         values.put(Date_Birth, date_Birth);
         values.put(Year_Birth, year_Birth);
-        values.put(Mobile_number, mobile);
         values.put(Delivery_Date, delivery_Date);
         values.put(Gender, gender);
         values.put(Height_Unit,"");

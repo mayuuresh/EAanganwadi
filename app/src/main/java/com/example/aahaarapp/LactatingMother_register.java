@@ -41,7 +41,8 @@ public class LactatingMother_register extends AppCompatActivity {
                 String mobileNon = mobileNo.getText().toString();
                 String deliveryDaten = deliveryDate.getText().toString();
 
-                // Retrieve the selected RadioButton text inside the OnClickListener
+                // Retrieve the selected RadioButton text
+                // inside the OnClickListener
                 int selectedId = gender.getCheckedRadioButtonId();
                 if (selectedId != -1) {
                     r = findViewById(selectedId);
