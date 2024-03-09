@@ -35,12 +35,12 @@
                 android:layout_width="341dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Children 0  to 6 months"
+                android:layout_marginBottom="5dp"
                 android:gravity="center"
-                android:textSize="25sp"
-                android:textStyle="bold"
+                android:text="Adolescent Girls"
                 android:textColor="@color/black"
-                android:layout_marginBottom="5dp"/>
+                android:textSize="25sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
@@ -82,52 +82,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="I}Are you given any nutritional supplements"
+                android:text="Are you already in your menstrual cycle?"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
-            <CheckBox
-                android:id="@+id/FalicAcid1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Falic Acid"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/Iron1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Iron"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="30px"
+                    android:layout_marginLeft="30px"
+                    android:text="Yes" />
 
-            <CheckBox
-                android:id="@+id/Vitamin1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vitamin"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
-
-            <CheckBox
-                android:id="@+id/Calcium1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Calcium"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100px"
+                    android:layout_marginLeft="100px"
+                    android:text="No" />
+            </RadioGroup>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="II}What is the Energy Intake ? (kcal/day)"
+                android:text="Iron Level(%)"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="17dp"
                 android:textStyle="bold" />
@@ -138,7 +124,7 @@
                 android:layout_height="48dp"
                 android:layout_margin="8dp"
                 android:background="@drawable/bordered_edittext"
-                android:hint="  Enter the Energy Intake"
+                android:hint="Enter Iron Level"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="18dp" />
 
@@ -146,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="III}What is the Protein Intake ? (g/day)"
+                android:text="Hemoglobin(g/dL)"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="17dp"
                 android:textStyle="bold" />
@@ -157,7 +143,7 @@
                 android:layout_height="48dp"
                 android:layout_margin="8dp"
                 android:background="@drawable/bordered_edittext"
-                android:hint="  Enter the Protein Intake"
+                android:hint="  Enter Hemoglobin"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="18dp" />
 
@@ -165,21 +151,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="IV}What is the Fat Intake ? (g/day)"
+                android:text="Which type of  health service are you availing?"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="17dp"
                 android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
 
-            <EditText
-                android:id="@+id/hemoglobin"
+            <CheckBox
+                android:id="@+id/checkBox"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="8dp"
-                android:background="@drawable/bordered_edittext"
-                android:hint="  Enter the Fat Intake"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp" />
+                android:layout_height="wrap_content"
+                android:text="Allopath" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hamopathy" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ayush" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -206,7 +201,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="I)Is the Child On Food Solids"
+                android:text="Height Unit"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="17dp"
                 android:textStyle="bold" />
@@ -223,14 +218,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="30dp"
-                    android:text="Yes"
-                    android:layout_marginRight="30dp" />
+                    android:layout_marginRight="30dp"
+                    android:text="Inch" />
 
                 <RadioButton
                     android:id="@+id/radioCM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No" />
+                    android:text="CM" />
 
             </RadioGroup>
 
@@ -238,7 +233,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="II}Hemoglobin (g/dL)"
+                android:text="Height"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="17dp"
                 android:textStyle="bold" />
@@ -249,7 +244,7 @@
                 android:layout_height="48dp"
                 android:layout_margin="8dp"
                 android:background="@drawable/bordered_edittext"
-                android:hint="  Enter the hemoglobin"
+                android:hint="  Enter The Height"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="18dp" />
 
@@ -257,37 +252,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="III)Which type Of Health Service Are You Availing?"
+                android:text="Weight (Kgs)"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
-            <CheckBox
-                android:id="@+id/FalicAcid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Allopath"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
+            <EditText
+                android:id="@+id/energy"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bordered_edittext"
+                android:hint="  Enter The Weight"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp" />
 
-            <CheckBox
-                android:id="@+id/Iron"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Homopathy"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
-
-            <CheckBox
-                android:id="@+id/Vitamin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ayush"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                tools:ignore="TextSizeCheck" />
         </LinearLayout>
 
         <Button

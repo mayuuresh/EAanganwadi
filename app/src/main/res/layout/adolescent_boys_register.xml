@@ -6,40 +6,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Children0M6MRegister"
+    tools:context=".Children6m3YRegister"
     >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10px"
+        android:layout_marginLeft="10px"
+        android:layout_marginEnd="10px"
+        android:layout_marginRight="10px"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/pink">
+            android:background="@color/pink"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/left_arrow"
+                android:layout_marginLeft="5dp"
                 android:contentDescription="Description for accessibility"
                 android:padding="8dp"
-                android:layout_marginLeft="5dp"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/left_arrow" />
 
             <TextView
                 android:id="@+id/titleTextView"
                 android:layout_width="341dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Children 0 months- 6 months"
+                android:layout_marginBottom="5dp"
                 android:gravity="center"
-                android:textSize="25sp"
-                android:textStyle="bold"
+                android:text="Adolescent Girls"
                 android:textColor="@color/black"
-                android:layout_marginBottom="5dp"/>
+                android:textSize="25sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
@@ -53,7 +58,6 @@
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:id="@id/edit1"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -72,20 +76,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/opensans"
-            android:text="Name of the Mother"
+            android:text="Date of Birth"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:id="@+id/edit2"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bordered_edittext"
-            android:hint="Enter Mother Name"
+            android:hint="Enter Date of Birth"
             android:importantForAutofill="no"
-            android:inputType="text"
+            android:inputType="number"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -97,40 +100,38 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/opensans"
-            android:text="Mobile No(Beneficiary/Father/Mother)"
+            android:text="Year of Birth"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:id="@+id/edit3"
+            android:id="@+id/Edit4"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bordered_edittext"
-            android:hint="Enter Phone Number"
-            android:inputType="phone" />
+            android:hint="Enter Year of Birth"
+            android:inputType="number" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/opensans"
-            android:text="Birth Weight Of the Child
-                            (kgs)"
+            android:text="Name of father"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:id="@+id/edit4"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bordered_edittext"
-            android:hint="Enter Weight"
+            android:hint="Enter Full Name"
             android:importantForAutofill="no"
-            android:inputType="number"
+            android:inputType="text"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -142,34 +143,18 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/opensans"
-            android:text="Birth Height unit"
+            android:text="Name of Mother"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
 
-        <RadioGroup
-            android:id="@+id/rg1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/Yes1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inch"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:layout_marginLeft="30dp"/>
-
-            <RadioButton
-                android:id="@+id/No1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CM"
-                android:textSize="20sp"
-                android:textColor="@color/black"/>
-        </RadioGroup>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bordered_edittext"
+            android:hint="Enter Full Name"
+            android:inputType="number" />
 
 
         <TextView
@@ -177,18 +162,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/opensans"
-            android:text="Birth Height Of the Child"
+            android:text="Enter Mobile No(Beneficiary/Father)"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:id="@+id/edit5"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bordered_edittext"
-            android:hint="Enter Birth Height"
+            android:hint="Enter Mobile"
             android:importantForAutofill="no"
             android:inputType="number"
             android:maxLines="1"
@@ -196,14 +180,14 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             tools:ignore="UnusedAttribute" />
+
         <Button
-            android:id="@+id/submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SUBMIT"
-            android:background="#FF0000"
             android:layout_marginTop="20dp"
-            android:textSize="20sp"/>
+            android:background="#FF0000"
+            android:text="SUBMIT"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </ScrollView>

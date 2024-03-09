@@ -63,29 +63,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="8dp"
+            android:orientation="vertical"
             android:background="@drawable/bordered_edittext"
-            android:orientation="vertical">
-
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="1.Nutritional Supplements"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:textSize="20dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="I}Are you given any nutritional supplements"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="17dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="17dp"/>
 
             <CheckBox
                 android:id="@+id/FalicAcid1"
@@ -129,8 +127,8 @@
                 android:layout_margin="10dp"
                 android:text="II}What is the Energy Intake ? (kcal/day)"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="17dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="17dp"/>
 
             <EditText
                 android:id="@+id/height"
@@ -141,15 +139,14 @@
                 android:hint="  Enter the Energy Intake"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="18dp" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="III}What is the Protein Intake ? (g/day)"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="17dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="17dp"/>
 
             <EditText
                 android:id="@+id/weight"
