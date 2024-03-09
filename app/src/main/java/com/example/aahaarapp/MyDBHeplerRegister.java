@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class MyDBHeplerRegister extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "E-Aganwadi";
+    private static final String DB_NAME = "Register";
     private static final int DB_VERSION = 1;
 
     private static final String TABLE_NAME_Reg = "register";

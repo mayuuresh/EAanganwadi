@@ -31,7 +31,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBtAubRGSlTZanGLTPT3JrKWsRCFAXZzrE" />
 
-        <activity android:name=".Preganent_Nutrition" />
 
         <activity android:name=".Signup" />
         <activity android:name=".Logup" />
@@ -40,6 +39,18 @@
         <activity android:name=".Issue" />
         <activity android:name=".ForgotIssue" />
         <activity android:name=".Pregnant_add"/>
+        <activity android:name=".Preganent_Nutrition" />
+        <activity android:name=".Preganent_Register"/>
+        <activity android:name=".Children0M6MAdd"/>
+        <activity android:name=".Children0M6MNutrition"/>
+        <activity android:name=".Children0M6MRegister"/>
+        <activity android:name=".Children3Y6YAdd"/>
+        <activity android:name=".Children3Y6YRegister"/>
+        <activity android:name=".Children3Y6YNutrition"/>
+        <activity android:name=".Children6M3YAdd"/>
+        <activity android:name=".Children6M3YNutrition"/>
+        <activity android:name=".Children6m3YRegister"/>
+
 
         <activity
             android:name=".SplashScreen"
