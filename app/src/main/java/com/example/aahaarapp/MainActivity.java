@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Preganent_add.class));
+                startActivity(new Intent(getApplicationContext(),Pregnant_add.class));
             }
         });
 
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        child3y_6y.setOnClickListener(new View.OnClickListener ()
+        child0m_6m.setOnClickListener(new View.OnClickListener ()
         {
             @Override
             public void onClick(View v) {
@@ -61,19 +61,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        child3y_6y.setOnClickListener(new View.OnClickListener ()
+        adolsentboys.setOnClickListener(new View.OnClickListener ()
         {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Children3Y6YRegister.class));
+                startActivity(new Intent(getApplicationContext(), AdolescentBoysAdd.class));
             }
         });
 
-        child3y_6y.setOnClickListener(new View.OnClickListener ()
+        adolsentgirls.setOnClickListener(new View.OnClickListener ()
         {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Children3Y6YRegister.class));
+                startActivity(new Intent(getApplicationContext(), AdolescentGirlsAdd.class));
             }
         });
     }
