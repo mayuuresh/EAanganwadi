@@ -18,6 +18,21 @@ public class LactatingMother_add extends AppCompatActivity {
         btn=findViewById(R.id.button6);
         helper = new MyDBHelperLactatingMother(this);
         Cursor cursor = helper.readAllData();
+
+        if (cursor.getCount() == 0) {
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+        }
+        else {
+
+
+
+        }
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
