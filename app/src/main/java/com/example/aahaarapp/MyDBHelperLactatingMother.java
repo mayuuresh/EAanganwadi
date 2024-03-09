@@ -2,6 +2,7 @@ package com.example.aahaarapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import android.database.sqlite.SQLiteOpenHelper;
@@ -74,5 +75,18 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    public Cursor readAllData()
+    {
+        String query = "SELECT * FROM " + TABLE_NAME_Lac;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null)
+        {
+            cursor = db.rawQuery(query,null);
+        }
+        return cursor;
     }
 }
