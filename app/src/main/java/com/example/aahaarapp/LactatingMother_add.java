@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,17 +21,9 @@ public class LactatingMother_add extends AppCompatActivity {
         Cursor cursor = helper.readAllData();
 
         if (cursor.getCount() == 0) {
-            btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            });
+            Toast.makeText(this, "NO Data Found", Toast.LENGTH_SHORT).show();
         }
         else {
-
-
-
         }
 
         btn.setOnClickListener(new View.OnClickListener() {
