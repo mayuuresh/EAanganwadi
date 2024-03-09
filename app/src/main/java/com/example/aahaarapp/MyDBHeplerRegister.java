@@ -2,6 +2,7 @@ package com.example.aahaarapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -38,6 +39,34 @@ public class MyDBHeplerRegister extends SQLiteOpenHelper {
         values.put(MPIN, mpin);
         db.insert(TABLE_NAME_Reg, null, values);
         db.close();
+    }
+
+    public Boolean checkNumber(String number)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from "+TABLE_NAME_Reg+" where "+Mobile_Number+" = ?",new String[]{number});
+
+        if(cursor.getCount()>0)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public Boolean checkmpin(String number,String mpin)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from "+TABLE_NAME_Reg+" where "+Mobile_Number+" = ? and "+MPIN+" = ?",new String[]{number,mpin});
+
+        if(cursor.getCount()>0)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
