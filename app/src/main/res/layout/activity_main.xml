@@ -40,7 +40,7 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardDonate"
+                android:id="@+id/Pregnant"
                 android:clickable="true"
                 android:layout_width="165dp"
                 android:layout_height="165dp"
@@ -68,7 +68,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardReceive"
+                android:id="@+id/Lactating"
                 android:clickable="true"
                 android:layout_width="165dp"
                 android:layout_height="165dp"
@@ -96,7 +96,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardFoodmap"
+                android:id="@+id/Children_0_6"
                 android:clickable="true"
                 android:layout_width="165dp"
                 android:layout_height="165dp"
@@ -137,7 +137,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardMyPin"
+                android:id="@+id/Children_6_3"
                 android:clickable="true"
                 android:layout_width="165dp"
                 android:layout_height="165dp"
@@ -177,7 +177,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardHistory"
+                android:id="@+id/Children_3_6"
                 android:clickable="true"
                 android:layout_width="165dp"
                 android:layout_height="165dp"
@@ -216,7 +216,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardAboutus"
+                android:id="@+id/Adolescent_Girls"
                 android:clickable="true"
                 android:layout_width="165dp"
                 android:layout_height="165dp"
@@ -245,7 +245,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardContact"
+                android:id="@+id/Adolescent_Boys"
                 android:clickable="true"
                 android:layout_width="165dp"
                 android:layout_height="165dp"
@@ -272,7 +272,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardLogout"
+                android:id="@+id/Logout"
                 android:clickable="true"
                 android:layout_width="165dp"
                 android:layout_height="165dp"

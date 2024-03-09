@@ -21,7 +21,7 @@ public class landingpage extends AppCompatActivity {
 
         login = findViewById(R.id.cardLogin);
         register = findViewById(R.id.cardRegister);
-        about = findViewById(R.id.cardAboutus);
+        about = findViewById(R.id.Adolescent_Girls);
 
         fAuth= FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser() !=null){

@@ -53,19 +53,20 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/Edit1"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
+
             android:background="@drawable/bordered_edittext"
-
             android:hint="Enter Your Name"
-            android:importantForAutofill="no"
 
+            android:importantForAutofill="no"
             android:inputType="text"
             android:maxLines="1"
             android:singleLine="true"
-            android:textColor="@color/black"
 
+            android:textColor="@color/black"
             android:textSize="18sp"
             tools:ignore="UnusedAttribute" />
 
@@ -80,11 +81,12 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/Edit2"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/bordered_edittext"
 
+            android:background="@drawable/bordered_edittext"
             android:hint="Enter Birth Date"
             android:importantForAutofill="no"
             android:inputType="text"
@@ -105,16 +107,17 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/Edit3"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
+
+
             android:background="@drawable/bordered_edittext"
-
-
             android:hint="Enter Birth Year"
             android:importantForAutofill="no"
-            android:inputType="number"
 
+            android:inputType="number"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -131,7 +134,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:id="@+id/editTextPhoneNumber"
+            android:id="@+id/Edit4"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -151,13 +154,13 @@
             tools:ignore="HardcodedText" />
 
         <RadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/rg1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radioButtonOption1"
+                android:id="@+id/Yes1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Yes"
@@ -166,7 +169,7 @@
                 android:layout_marginEnd="30dp"/>
 
             <RadioButton
-                android:id="@+id/radioButtonOption2"
+                android:id="@+id/No1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No"
@@ -188,22 +191,23 @@
             tools:ignore="HardcodedText" />
 
         <RadioGroup
-            android:id="@+id/radioGroup2"
+            android:id="@+id/rg2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radioButtonOption3"
+                android:id="@+id/Yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Yes"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:layout_marginEnd="30dp"/>
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp" />
 
             <RadioButton
-                android:id="@+id/radioButtonOption4"
+                android:id="@+id/No"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No"
@@ -214,12 +218,13 @@
         </RadioGroup>
 
         <Button
+            android:id="@+id/Submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SUBMIT"
-            android:background="#FF0000"
             android:layout_marginTop="20dp"
-            android:textSize="20sp"/>
+            android:background="#FF0000"
+            android:text="SUBMIT"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </ScrollView>
