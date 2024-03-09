@@ -17,6 +17,7 @@ public class MyDBHeplerRegister extends SQLiteOpenHelper {
     private static final String Mobile_Number = "number";
     private static final String MPIN = "mpin";
 
+
     public MyDBHeplerRegister(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -67,6 +68,19 @@ public class MyDBHeplerRegister extends SQLiteOpenHelper {
         else {
             return false;
         }
+    }
+
+    public int updatePassword(String number, String mpin) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(MPIN, mpin);
+
+        // Updating row(s) where username matches
+        int rowsAffected = db.update(TABLE_NAME_Reg, values, Mobile_Number + " = ?", new String[]{number});
+        db.close();
+        return rowsAffected;
+
     }
 
     @Override

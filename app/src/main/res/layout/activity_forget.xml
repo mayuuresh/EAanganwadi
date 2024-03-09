@@ -39,6 +39,7 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/mobile2"
         android:layout_width="311dp"
         android:layout_height="42dp"
         android:layout_marginTop="30px"
@@ -62,6 +63,7 @@
         android:gravity="center_horizontal" />
 
     <EditText
+        android:id="@+id/mpin3"
         android:layout_width="309dp"
         android:layout_height="40dp"
         android:background="@drawable/bordered_edittext"
@@ -74,24 +76,15 @@
 
     <Button
         android:id="@+id/loginbutton"
-        android:layout_width="268dp"
+        android:layout_width="233dp"
         android:layout_height="60dp"
         android:layout_marginTop="50px"
         android:backgroundTint="#D12121"
-        android:text="Set Password"
+        android:text="Set Mpin"
         android:textColor="@color/black"
         android:textSize="26dp"
         app:cornerRadius="32dp" />
 
-    <!-- <com.google.android.material.button.MaterialButton
-         android:layout_width="190dp"
-         android:layout_height="60dp"
-         android:text="Login"
-         android:textSize="26dp"
-         app:cornerRadius="32dp"
-         android:textColor="@color/black"
-         android:backgroundTint="#D12121"
-         />-->
     <TextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
