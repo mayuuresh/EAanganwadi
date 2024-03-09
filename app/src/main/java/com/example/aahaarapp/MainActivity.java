@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LactatingMother_add.class));
+                startActivity(new Intent(getApplicationContext(),LactatingMother_add.class));
             }
         });
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Children0M6MAdd.class));
+                startActivity(new Intent(getApplicationContext(),Children0M6MAdd.class));
             }
         });
 
