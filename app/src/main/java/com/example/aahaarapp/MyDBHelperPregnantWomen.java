@@ -26,8 +26,8 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query_reg = "CREATE TABLE " + TABLE_NAME_Reg + " ("
-                + name + "TEXT" + dob + "TEXT" + yob + "TEXT"
                 + mobileNo + " TEXT PRIMARY KEY, "
+                + name + "TEXT" + dob + "TEXT" + yob + "TEXT"
                 + pregnancy + " TEXT"+miscarriage+"TEXT)";
         db.execSQL(query_reg);
 

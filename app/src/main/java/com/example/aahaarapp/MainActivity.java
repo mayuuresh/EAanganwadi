@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         CardView pregnent=findViewById(R.id.Pregnant);
         CardView lactating=findViewById(R.id.Lactating);
 
+
         pregnent.setOnClickListener(new View.OnClickListener ()
         {
             @Override
