@@ -40,19 +40,19 @@ public class Children3Y6YRegister extends AppCompatActivity {
                 String weightn = weight.getText().toString();
                 String heightn = height.getText().toString();
 
-                int selectedId = gender.getCheckedRadioButtonId();
+                int selectedId = heightUnit.getCheckedRadioButtonId();
                 if (selectedId != -1) {
                     r = findViewById(selectedId);
                     String heightUnitn = r.getText().toString();
 
-                    helper.childrenRegister(namestr, mothern, mobilen, weightn, gendern);
-                    Toast.makeText(LactatingMother_register.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
+                    helper.childrenRegister(namestr, mothern, mobilen, weightn,heightUnitn, heightn);
+                    Toast.makeText(Children3Y6YRegister.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(getApplicationContext(), Logup.class);
                     startActivity(intent);
                 } else {
                     // Handle the case where no RadioButton is selected
-                    Toast.makeText(LactatingMother_register.this, "Please select gender", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Children3Y6YRegister.this, "Please select gender", Toast.LENGTH_SHORT).show();
                 }
 
             }
