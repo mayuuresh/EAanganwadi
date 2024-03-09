@@ -10,10 +10,10 @@ import androidx.annotation.Nullable;
 
 public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "AdolescentGirls";
+    private static final String DB_NAME = "AdolescentBoys";
     private static final int DB_VERSION = 1;
 
-    private static final String TABLE_NAME = "Adolescentgirls";
+    private static final String TABLE_NAME = "Adolescentboys";
     private static final String name = "Name";
     private static final String dob = "Dob";
     private static final String yob = "Yob";
