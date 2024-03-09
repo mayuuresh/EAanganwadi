@@ -77,4 +77,17 @@ public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+    public void updateColumns(String id, String value1, String value2, String value3,String value4,String value5,String value6,String value7) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Nutritional_Supplements, value1);
+        values.put(Energy_Intake, value2);
+        values.put(Protein_Intake, value3);
+        values.put(Fat_Intake, value4);
+        values.put(Food_Solids, value5);
+        values.put(Hemoglobin, value6);
+        values.put(Health_Service, value7);
+        db.update(TABLE_NAME_Child, values, Mobile + " = ?", new String[]{id});
+        db.close();
+    }
 }
