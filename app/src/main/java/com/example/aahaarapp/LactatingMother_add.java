@@ -7,17 +7,17 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Children3Y6YAdd extends AppCompatActivity {
-    Button btn;
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.children_3y_6y_add);
+public class LactatingMother_add extends AppCompatActivity {
 
+    Button btn;
+    public void onCreate( Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.lactating_add);
         btn=findViewById(R.id.button6);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Children3Y6YRegister.class));
+                startActivity(new Intent(getApplicationContext(),LactatingMother_register.class));
             }
         });
     }

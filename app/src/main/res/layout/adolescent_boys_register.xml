@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Children6m3YRegister"
+    tools:context=".AdolescentBoysRegister"
     >
 
     <LinearLayout
@@ -58,6 +58,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/Name"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -82,6 +83,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/Dob"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -106,7 +108,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:id="@+id/Edit4"
+            android:id="@+id/Yob"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -125,6 +127,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/Father"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -149,6 +152,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/Mother"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -168,6 +172,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/Mobile"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -182,6 +187,7 @@
             tools:ignore="UnusedAttribute" />
 
         <Button
+            android:id="@+id/Register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

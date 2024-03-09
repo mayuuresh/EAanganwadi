@@ -24,7 +24,7 @@ public class Preganent_Register extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pregnant_register);
-        mobile1 =findViewById(R.id.Edit4);
+        mobile1 =findViewById(R.id.Yob);
         name1 = findViewById(R.id.Edit1);
         dob1 = findViewById(R.id.Edit2);
         yob1 = findViewById((R.id.Edit3));
