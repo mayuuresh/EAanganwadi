@@ -27,9 +27,6 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
     private static final String Health_Service = "healthService";
 
 
-
-
-
     public MyDBHelperLactatingMother(@Nullable Context context) {
         super(context,DB_NAME,null,DB_VERSION);
     }
