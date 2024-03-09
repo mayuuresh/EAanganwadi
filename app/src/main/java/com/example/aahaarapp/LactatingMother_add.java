@@ -24,6 +24,16 @@ public class LactatingMother_add extends AppCompatActivity {
             Toast.makeText(this, "NO Data Found", Toast.LENGTH_SHORT).show();
         }
         else {
+            StringBuffer buffer = new StringBuffer();
+            while (cursor.moveToNext()) {
+                buffer.append("Name: " + cursor.getString(0) + "\n");
+                buffer.append("Age: " + cursor.getString(1) + "\n");
+                buffer.append("Phone: " + cursor.getString(2) + "\n");
+                buffer.append("Address: " + cursor.getString(3) + "\n");
+                buffer.append("Email: " + cursor.getString(4) + "\n");
+                buffer.append("Password: " + cursor.getString(5) + "\n");
+            }
+            Toast.makeText(this, buffer.toString(), Toast.LENGTH_SHORT).show();
         }
 
         btn.setOnClickListener(new View.OnClickListener() {
