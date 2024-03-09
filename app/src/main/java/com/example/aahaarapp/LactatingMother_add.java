@@ -13,6 +13,7 @@ public class LactatingMother_add extends AppCompatActivity {
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lactating_add);
+        btn=findViewById(R.id.button6);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
