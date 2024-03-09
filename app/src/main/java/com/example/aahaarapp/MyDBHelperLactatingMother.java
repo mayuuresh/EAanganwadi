@@ -37,10 +37,10 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query_lac = "CREATE TABLE " + TABLE_NAME_Lac + " ("
+                + Mobile_number + " TEXT PRIMARY KEY , "
                 + Name + " TEXT , "
                 + Date_Birth + " TEXT ,"
                 + Year_Birth + " TEXT , "
-                + Mobile_number + " TEXT PRIMARY KEY , "
                 + Delivery_Date + " TEXT , "
                 + Gender + " TEXT , "
                 + Height_Unit + " TEXT , "
