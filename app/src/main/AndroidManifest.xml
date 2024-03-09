@@ -32,7 +32,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBtAubRGSlTZanGLTPT3JrKWsRCFAXZzrE" />
 
-
+<activity android:name=".children_0_6_nutrition"/>
         <activity android:name=".Signup" />
         <activity android:name=".Logup" />
         <activity android:name=".MainActivity" />
@@ -51,6 +51,8 @@
         <activity android:name=".Children6M3YAdd"/>
         <activity android:name=".Children6M3YNutrition"/>
         <activity android:name=".Children6m3YRegister"/>
+        <activity android:name=".LactatingMother_register"/>
+
 
 
         <activity
