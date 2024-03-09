@@ -53,6 +53,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/edit1"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -80,6 +81,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/edit2"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -105,6 +107,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/edit3"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -128,7 +131,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
-            android:id="@+id/Edit4"
+            android:id="@+id/edit4"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -147,6 +150,7 @@
             tools:ignore="HardcodedText" />
 
         <EditText
+            android:id="@+id/edit5"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
@@ -163,6 +167,7 @@
 
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -174,7 +179,7 @@
             tools:ignore="HardcodedText" />
 
         <RadioGroup
-            android:id="@+id/rg2"
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -186,7 +191,7 @@
                 android:text="M"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:layout_marginEnd="30dp"/>
+                android:layout_marginLeft="30dp"/>
 
             <RadioButton
                 android:id="@+id/No"
@@ -198,6 +203,7 @@
         </RadioGroup>
 
         <Button
+            android:id="@+id/submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SUBMIT"

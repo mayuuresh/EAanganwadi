@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class landingpage extends AppCompatActivity {
 
     CardView login,register,about;
-    FirebaseAuth fAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +23,6 @@ public class landingpage extends AppCompatActivity {
         register = findViewById(R.id.cardRegister);
         about = findViewById(R.id.Adolescent_Girls);
 
-        fAuth= FirebaseAuth.getInstance();
-        if(fAuth.getCurrentUser() !=null){
-            Intent intent = new Intent(landingpage.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
 
         login.setOnClickListener(new View.OnClickListener ()
         {

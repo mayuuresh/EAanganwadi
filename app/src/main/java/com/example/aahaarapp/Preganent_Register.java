@@ -26,10 +26,9 @@ public class Preganent_Register extends AppCompatActivity {
         dob1 = findViewById(R.id.Edit2);
         yob1 = findViewById((R.id.Edit3));
         radioGroup=findViewById(R.id.rg1);
-        radioGroup1=findViewById(R.id.rg1);
+        radioGroup1=findViewById(R.id.rg2);
         radio1=(RadioButton)findViewById(radioGroup.getCheckedRadioButtonId());
         radio2=(RadioButton)findViewById(radioGroup1.getCheckedRadioButtonId());
-      
         register = findViewById(R.id.Submit);
         MyDBHelperPregnantWomen helper = new MyDBHelperPregnantWomen(this);
 
@@ -43,7 +42,7 @@ public class Preganent_Register extends AppCompatActivity {
                 String r1=radio1.getText().toString();
                 String r2=radio2.getText().toString();
 
-                    helper.registeruser(name,dob,yob,mobile,r1,r2);
+                helper.registeruser(name,dob,yob,mobile,r1,r2);
 
                     Toast.makeText(Preganent_Register.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
