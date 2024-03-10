@@ -2,6 +2,7 @@ package com.example.aahaarapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,10 +10,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class Issue extends AppCompatActivity {
     EditText name,mobile,email,subject,issue;
     String str_name,str_email,str_subject,str_issue,str_mobile;
     Button sbt;
+    public static final String ACCOUNT_SID = "AC4c83b856d6e2158365a43f0d0e0f85dc";
+    public static final String AUTH_TOKEN = "8133253477f3a026dd9b03729eb7b631";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +43,16 @@ public class Issue extends AppCompatActivity {
 
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(Issue.this, "Data Inserted", Toast.LENGTH_SHORT).show();
+                sendSms();
+
 
                 }
         });
 
+    }
+    public void sendSms() {
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage("+919423929864", null, "Thank you for your feedback. We will get back to you soon.", null, null);
     }
 
 }
