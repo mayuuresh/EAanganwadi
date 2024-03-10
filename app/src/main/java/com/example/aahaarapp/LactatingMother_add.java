@@ -1,46 +1,38 @@
-package com.example.aahaarapp;
+    package com.example.aahaarapp;
 
-import android.content.Intent;
-import android.database.Cursor;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+    import android.content.Intent;
+    import android.database.Cursor;
+    import android.os.Bundle;
+    import android.view.View;
+    import android.widget.Button;
+    import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+    import androidx.appcompat.app.AppCompatActivity;
+    import androidx.recyclerview.widget.LinearLayoutManager;
+    import androidx.recyclerview.widget.RecyclerView;
 
-public class LactatingMother_add extends AppCompatActivity {
+    import java.util.LinkedList;
+    import java.util.List;
 
-    Button btn;
-    MyDBHelperLactatingMother helper;
-    public void onCreate( Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.lactating_add);
-        btn=findViewById(R.id.button6);
-        helper = new MyDBHelperLactatingMother(this);
-        Cursor cursor = helper.readAllData();
+    public class LactatingMother_add extends AppCompatActivity {
+        private DemoAdapter adapter;
+        private List<String> items;
 
-        if (cursor.getCount() == 0) {
-            Toast.makeText(this, "NO Data Found", Toast.LENGTH_SHORT).show();
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.lactating_add);
+
+            items = new LinkedList<>();
+            RecyclerView recyclerView = findViewById(R.id.Recycler);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            adapter = new DemoAdapter(items);
+            recyclerView.setAdapter(adapter);
+
+            findViewById(R.id.button6).setOnClickListener(view -> {
+                // Add new layout
+                adapter.addNewLayout();
+            });
         }
-        else {
-            StringBuffer buffer = new StringBuffer();
-            while (cursor.moveToNext()) {
-                buffer.append("Name: " + cursor.getString(0) + "\n");
-                buffer.append("Age: " + cursor.getString(1) + "\n");
-                buffer.append("Phone: " + cursor.getString(2) + "\n");
-                buffer.append("Address: " + cursor.getString(3) + "\n");
-                buffer.append("Email: " + cursor.getString(4) + "\n");
-                buffer.append("Password: " + cursor.getString(5) + "\n");
-            }
-            Toast.makeText(this, buffer.toString(), Toast.LENGTH_SHORT).show();
-        }
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),LactatingMother_register.class));
-            }
-        });
     }
-}
+

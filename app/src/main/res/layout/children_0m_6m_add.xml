@@ -82,7 +82,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/name"
                 android:layout_width="169dp"
                 android:layout_height="32dp"
                 android:fontFamily="@font/blinker_bold"
@@ -100,7 +100,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -108,14 +108,14 @@
                 android:textColor="#403D3D"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView4"
+                app:layout_constraintEnd_toStartOf="@+id/Mobile1"
                 app:layout_constraintHorizontal_bias="0.275"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/name"
                 app:layout_constraintVertical_bias="0.238" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/Mobile1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="84dp"
@@ -127,8 +127,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/button4"
                 app:layout_constraintHorizontal_bias="0.085"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/name"
+                app:layout_constraintTop_toBottomOf="@+id/name"
                 app:layout_constraintVertical_bias="0.238" />
 
             <Button

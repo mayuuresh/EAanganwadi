@@ -44,6 +44,7 @@ public class Issue extends AppCompatActivity {
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(Issue.this, "Data Inserted", Toast.LENGTH_SHORT).show();
                 sendSms();
+                Toast.makeText(Issue.this,"Success",Toast.LENGTH_SHORT).show();
 
 
                 }
