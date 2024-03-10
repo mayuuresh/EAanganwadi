@@ -19,14 +19,13 @@
         RadioButton r;
         Button btn;
         MyDBHelperLactatingMother helper;
-        DemoAdapter adapter;
-        List<String> items;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.lactating_register);
-
+            ButtonClickListener listener;
+            listener = (ButtonClickListener) new LactatingMother_add();
             name = findViewById(R.id.edit1);
             birthDate = findViewById(R.id.edit2);
             birthYear = findViewById(R.id.edit3);
@@ -34,19 +33,18 @@
             deliveryDate = findViewById(R.id.edit5);
             gender = findViewById(R.id.radioGroup);
             btn = findViewById(R.id.submit);
-            helper = new MyDBHelperLactatingMother(this);
-            items = new LinkedList<>();
-            adapter = new DemoAdapter(items);
-//            recyclerView.setAdapter(adapter);
 
+
+            helper = new MyDBHelperLactatingMother(this);
+            List<String> items = new LinkedList<>();
+            DemoAdapter da=new DemoAdapter(items);
             btn.setOnClickListener(view -> {
                 String namestr = name.getText().toString();
                 String birthDaten = birthDate.getText().toString();
                 String birthYearn = birthYear.getText().toString();
                 String mobileNon = mobileNo.getText().toString();
                 String deliveryDaten = deliveryDate.getText().toString();
-
-
+                int age=(2024-Integer.parseInt(birthYearn));
                 // Retrieve the selected RadioButton text
                 // inside the OnClickListener
                 int selectedId = gender.getCheckedRadioButtonId();
@@ -57,14 +55,20 @@
                     helper.lactatingRegister(namestr, birthDaten, birthYearn, mobileNon, deliveryDaten, gendern);
                     Toast.makeText(LactatingMother_register.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(getApplicationContext(), LactatingMother_add.class);
-                    startActivity(intent);
+//                    Intent intent = new Intent(getApplicationContext(), LactatingMother_add.class);
+//                    startActivity(intent);
                 } else {
                     // Handle the case where no RadioButton is selected
                     Toast.makeText(LactatingMother_register.this, "Please select gender", Toast.LENGTH_SHORT).show();
                 }
+//                da.addNewLayout();
 
-                adapter.addNewLayout();
+                listener.onButtonClick();
+                Intent intent = new Intent(LactatingMother_register.this, List1.class);
+                    intent.putExtra("Age",age);
+                intent.putExtra("Mobile",mobileNon);
+
+//                    startActivity(intent);
             });
         }
     }

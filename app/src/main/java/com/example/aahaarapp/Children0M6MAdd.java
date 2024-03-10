@@ -17,7 +17,7 @@ public class Children0M6MAdd extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Children0M6MRegister.class));
+                startActivity(new Intent(getApplicationContext(), LactatingMother_register.class));
             }
         });
     }

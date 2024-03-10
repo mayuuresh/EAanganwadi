@@ -108,14 +108,14 @@
                 android:textColor="#403D3D"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/Mobile1"
+                app:layout_constraintEnd_toStartOf="@+id/Mobile3"
                 app:layout_constraintHorizontal_bias="0.275"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name"
                 app:layout_constraintVertical_bias="0.238" />
 
             <TextView
-                android:id="@+id/Mobile1"
+                android:id="@+id/Mobile3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="84dp"
