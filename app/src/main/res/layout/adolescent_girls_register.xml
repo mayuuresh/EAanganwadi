@@ -166,7 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/opensans"
-            android:text="Enter Mobile No(Beneficiary/Father)"
+            android:text="Enter Mobile No(+91 and your No)"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />

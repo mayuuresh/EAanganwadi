@@ -125,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/opensans"
-            android:text="Mobile No(Beneficiary/Husband)"
+            android:text="Mobile No(+91 and your No)"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
@@ -137,7 +137,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/bordered_edittext"
             android:hint="Enter Phone Number"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -209,7 +210,8 @@
             android:text="SUBMIT"
             android:background="#FF0000"
             android:layout_marginTop="20dp"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 </ScrollView>

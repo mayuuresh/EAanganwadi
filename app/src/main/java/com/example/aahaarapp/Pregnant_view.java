@@ -1,8 +1,6 @@
 package com.example.aahaarapp;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +9,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class Preganent_Nutrition extends AppCompatActivity {
-    protected void onCreate(Bundle savedInstanceState) {
+public class Pregnant_view extends AppCompatActivity{
+    public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.preganent_nutrition);
+        setContentView(R.layout.preganent_view);
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
         String currentDateAndTime = sdf.format(new Date());

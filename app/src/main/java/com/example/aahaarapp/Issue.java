@@ -15,8 +15,7 @@ public class Issue extends AppCompatActivity {
     EditText name,mobile,email,subject,issue;
     String str_name,str_email,str_subject,str_issue,str_mobile;
     Button sbt;
-    public static final String ACCOUNT_SID = "AC4c83b856d6e2158365a43f0d0e0f85dc";
-    public static final String AUTH_TOKEN = "8133253477f3a026dd9b03729eb7b631";
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,20 +39,19 @@ public class Issue extends AppCompatActivity {
                 str_issue=issue.getText().toString();
 
                 helper.addNewCourse(str_name,str_mobile,str_email,str_subject,str_issue);
+                String msg= "Name: "+str_name+"  Mobile: "+str_mobile+"  Subject: "+str_subject+"  Issue: "+str_issue;
 
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(Issue.this, "Data Inserted", Toast.LENGTH_SHORT).show();
-                sendSms();
+                sendSms(msg);
                 Toast.makeText(Issue.this,"Success",Toast.LENGTH_SHORT).show();
-
 
                 }
         });
-
     }
-    public void sendSms() {
+    public void sendSms(String issue) {
         SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage("+919423929864", null, "Thank you for your feedback. We will get back to you soon.", null, null);
+        smsManager.sendTextMessage("+919689919738", null, issue, null, null);
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.aahaarapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,6 +47,7 @@ public class Children3Y6YRegister extends AppCompatActivity {
                     String heightUnitn = r.getText().toString();
 
                     helper.childrenRegister(namestr, mothern, mobilen, weightn,heightUnitn, heightn);
+                    sendSms(mobilen,"Your data has been successfully registered for Children 3 year to 6 year Program.We will keep you updated with the latest information. Thank you for registering with us.");
                     Toast.makeText(Children3Y6YRegister.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(getApplicationContext(), Logup.class);
@@ -57,5 +59,10 @@ public class Children3Y6YRegister extends AppCompatActivity {
 
             }
         });
+    }
+    public void sendSms(String number,String message) {
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(number, null, message, null, null);
+
     }
 }

@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/opensans"
-            android:text="Mobile No(Beneficiary/Husband)"
+            android:text="Mobile No(+91 and your number)"
             android:textColor="@color/black"
             android:textSize="20sp"
             tools:ignore="HardcodedText" />
@@ -139,8 +139,9 @@
             android:layout_height="48dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bordered_edittext"
-            android:hint="Enter Phone Number"
-            android:inputType="phone" />
+            android:hint="Enter Number(+91 and your number)"
+            android:inputType="phone"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -166,7 +167,7 @@
                 android:text="Yes"
                 android:textSize="20sp"
                 android:textColor="@color/black"
-                android:layout_marginLeft="30dp"/>
+                android:layout_marginLeft="3dp"/>
 
             <RadioButton
                 android:id="@+id/No1"
@@ -224,7 +225,8 @@
             android:layout_marginTop="20dp"
             android:background="#FF0000"
             android:text="SUBMIT"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 </ScrollView>

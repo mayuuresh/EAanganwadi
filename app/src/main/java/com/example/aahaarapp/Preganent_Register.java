@@ -9,17 +9,20 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.telephony.SmsManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class Preganent_Register extends AppCompatActivity {
+public class Preganent_Register extends AppCompatActivity
+{
     EditText name1,mobile1,dob1,yob1;
     RadioButton radio1;
     RadioButton radio2;
     RadioGroup radioGroup,radioGroup1;
     Button register;
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
 
 
         super.onCreate(savedInstanceState);
@@ -34,12 +37,11 @@ public class Preganent_Register extends AppCompatActivity {
         radio2=findViewById(radioGroup1.getCheckedRadioButtonId());
       
         register = findViewById(R.id.Submit);
-        try (
-            MyDBHelperPregnantWomen helper = new   MyDBHelperPregnantWomen(this)){
 
+        MyDBHelperPregnantWomen helper = new   MyDBHelperPregnantWomen(this);
 
-
-                    register.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener()
+        {
                         @Override
                         public void onClick(View view) {
                             String mobile = mobile1.getText().toString();
@@ -57,21 +59,21 @@ public class Preganent_Register extends AppCompatActivity {
 
                             // Now, you have the text of the checked RadioButtons
                             // Proceed with further processing
-
-                    helper.registeruser(name, dob, yob, mobile, r1, r2);
-
-                    Toast.makeText(Preganent_Register.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
-
-
-                    Intent intent = new Intent(getApplicationContext(), Logup.class);
-                    startActivity(intent);
+                            helper.registeruser(name, dob, yob, mobile, r1, r2);
+                            sendSms(mobile, "You have successfully registered for the pregnancy program. We will keep you updated with the latest information. Thank you for registering with us.");
+                            Toast.makeText(Preganent_Register.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
 
-                }
+                            //Intent intent = new Intent(getApplicationContext(), Logup.class);
+                            //startActivity(intent);
+                        }
             });
-        }catch(Exception ignored)
-        {
+    }
+    public void sendSms(String number,String message) {
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(number, null, message, null, null);
 
-        }
     }
 }
+
+

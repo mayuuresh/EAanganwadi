@@ -54,7 +54,6 @@
         <activity android:name=".Children6M3YAdd"/>
         <activity android:name=".Children6M3YNutrition"/>
         <activity android:name=".Children6m3YRegister"/>
-        <activity android:name=".LactatingMother_register"/>
         <activity android:name=".LactatingMother_add"/>
         <activity android:name=".LactatingMother_Nutrition"/>
         <activity android:name=".AdolescentGirlsAdd"/>
@@ -64,6 +63,7 @@
         <activity android:name=".AdolescentBoysRegister"/>
         <activity android:name=".AdolescentBoysNutrition"/>
         <activity android:name=".List1"/>
+        <activity android:name=".Pregnant_view"/>
 
 
 

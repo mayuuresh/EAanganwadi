@@ -2,6 +2,7 @@
 
     import android.content.Intent;
     import android.os.Bundle;
+    import android.telephony.SmsManager;
     import android.widget.Button;
     import android.widget.EditText;
     import android.widget.RadioButton;
@@ -53,6 +54,7 @@
                     String gendern = r.getText().toString();
 
                     helper.lactatingRegister(namestr, birthDaten, birthYearn, mobileNon, deliveryDaten, gendern);
+                    sendSms(mobileNon,"Your data has been successfully registered for Lactating Mother.We will keep you updated with the latest information. Thank you for registering with us.");
                     Toast.makeText(LactatingMother_register.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
 //                    Intent intent = new Intent(getApplicationContext(), LactatingMother_add.class);
@@ -68,7 +70,12 @@
                     intent.putExtra("Age",age);
                 intent.putExtra("Mobile",mobileNon);
 
-//                    startActivity(intent);
+                    startActivity(intent);
             });
+        }
+        public void sendSms(String number,String message) {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(number, null, message, null, null);
+
         }
     }
