@@ -10,16 +10,28 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
+
 public class AdolescentBoysRegister extends AppCompatActivity {
     EditText mobile1,name1,dob1,yob1,mother1,father1;
     Button register;
-    String email,pass,repass;
+
+    TabLayout tabLayout;
+    TabItem home,awc,profile;
+
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState) ;
 
+
         setContentView(R.layout.adolescent_boys_register);
+         tabLayout = findViewById(R.id.tabLayout);
+         home=findViewById(R.id.home);
+         awc=findViewById(R.id.awc);
+         profile=findViewById(R.id.profile);
         mobile1 =findViewById(R.id.Mobile);
+
         name1 = findViewById(R.id.Name);
         dob1 = findViewById(R.id.Dob);
         yob1 = findViewById((R.id.Yob));
@@ -27,37 +39,86 @@ public class AdolescentBoysRegister extends AppCompatActivity {
         father1 = findViewById((R.id.Father));
         mother1 = findViewById((R.id.Mother));
 
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                // Handle tab selection (which effectively is a click)
+                int position = tab.getPosition();
+                switch (position) {
+                    case 0:
+                        // Handle click on Tab 1
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        // Handle click on Tab 2
+                        Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent1);
+                        break;
+                    case 2:
+                        // Handle click on Tab 3
+                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent2);
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                // Handle tab unselection (optional)
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                // Handle tab reselection (optional)
+            }
+        });
+
         MyDBHelperAdolescentGirls helper = new MyDBHelperAdolescentGirls(this);
 
+//        home.setOnClickListener(view -> {
+//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//            startActivity(intent);
+//        });
+//        awc.setOnClickListener(view -> {
+//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//            startActivity(intent);
+//        });
+//        profile.setOnClickListener(view -> {
+//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//            startActivity(intent);
+//        });
 
 
-            register.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    String mobile = mobile1.getText().toString();
-                    String name = name1.getText().toString();
-                    String dob = dob1.getText().toString();
-                    String yob = yob1.getText().toString();
-                    String father=father1.getText().toString();
-                    String mother=mother1.getText().toString();
 
 
-                    // Now, you have the text of the checked RadioButtons
-                    // Proceed with further processing
-
-                    helper.registeruser(name, dob, yob, mobile, father,mother);
-                    sendSms(mobile,"Your data has been successfully registered for Adolescent Boys Program.We will keep you updated with the latest information. Thank you for registering with us.");
-
-                    Toast.makeText(AdolescentBoysRegister.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
-
-
-                    Intent intent = new Intent(getApplicationContext(), Logup.class);
-                    startActivity(intent);
+            register.setOnClickListener(view -> {
+                String mobile = mobile1.getText().toString();
+                String name = name1.getText().toString();
+                String dob = dob1.getText().toString();
+                String yob = yob1.getText().toString();
+                String father=father1.getText().toString();
+                String mother=mother1.getText().toString();
 
 
-                }
+                // Now, you have the text of the checked RadioButtons
+                // Proceed with further processing
+
+                helper.registeruser(name, dob, yob, mobile, father,mother);
+                sendSms(mobile,"Your data has been successfully registered for Adolescent Boys Program.We will keep you updated with the latest information. Thank you for registering with us.");
+
+                Toast.makeText(AdolescentBoysRegister.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
+
+
+                Intent intent = new Intent(getApplicationContext(), Logup.class);
+                startActivity(intent);
+
+
             });
-    }
+
+
+        }
+
     public void sendSms(String number,String message) {
         SmsManager smsManager = SmsManager.getDefault();
         smsManager.sendTextMessage(number, null, message, null, null);

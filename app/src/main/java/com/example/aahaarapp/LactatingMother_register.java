@@ -38,7 +38,7 @@
 
             helper = new MyDBHelperLactatingMother(this);
             List<String> items = new LinkedList<>();
-            DemoAdapter da=new DemoAdapter(items);
+           // DemoAdapter da=new DemoAdapter(items);
             btn.setOnClickListener(view -> {
                 String namestr = name.getText().toString();
                 String birthDaten = birthDate.getText().toString();

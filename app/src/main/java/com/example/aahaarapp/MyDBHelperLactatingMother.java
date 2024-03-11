@@ -1,5 +1,6 @@
 package com.example.aahaarapp;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,6 +9,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModel;
+
+import com.example.aahaarapp.Modal.ViewData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
     private static final String DB_NAME = "Lactating";
@@ -88,6 +95,41 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
             cursor = db.rawQuery(query,null);
         }
         return cursor;
+    }
+
+    @SuppressLint("Range")
+    public List<ViewData> getAllData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = null;
+        List<ViewData> alldata= new ArrayList<>();
+        db.beginTransaction();
+        String query = "SELECT name,mobileNo,birthYear FROM " + TABLE_NAME_Lac;
+        try{
+            cursor = db.rawQuery(query,null);
+            if(cursor!= null){
+                if(cursor.moveToFirst()){
+                    do{
+                        ViewData viewModel= new ViewData();
+                        viewModel.setName(cursor.getString(cursor.getColumnIndex(Name)));
+                        viewModel.setMobile(cursor.getString(cursor.getColumnIndex(Mobile_number)));
+                        viewModel.setAge(cursor.getString(cursor.getColumnIndex(Date_Birth)));
+                        alldata.add(viewModel);
+
+
+
+
+                    }while(cursor.moveToNext());
+                }
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            db.endTransaction();
+            cursor.close();
+        }
+        return alldata;
     }
 
 }

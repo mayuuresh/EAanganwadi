@@ -17,7 +17,7 @@
     import java.util.LinkedList;
     import java.util.List;
 
-    public class LactatingMother_add extends AppCompatActivity implements ButtonClickListener {
+    public class LactatingMother_add extends AppCompatActivity{
         List<String> items = new LinkedList<>();
         DemoAdapter adapter = new DemoAdapter(items);
         Button btnadd;
@@ -48,11 +48,6 @@
         }
 
 
-        @Override
-        public void onButtonClick() {
-            adapter.addNewLayout();
-            Toast.makeText(this, "Please select gender", Toast.LENGTH_SHORT).show();
 
-        }
     }
 

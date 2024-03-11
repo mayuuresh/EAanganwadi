@@ -3,14 +3,20 @@ package com.example.aahaarapp;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.BreakIterator;
 import java.util.List;
 
 public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.DemoVH> {
     private final List<String> items;
+    int position = 0; // Example position, replace with your desired position
+    String newName = "New Name";
+    String newAge = "New Age";
+    String newMobile = "New Mobile";
 
     DemoAdapter(List<String> items) {
         this.items = items;
@@ -26,6 +32,11 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.DemoVH> {
     @Override
     public void onBindViewHolder(@NonNull DemoVH holder, int position) {
         // Bind data here if needed
+
+    }
+
+    public void updateItemText(int position, String newName, String newAge, String newMobile) {
+
     }
 
     @Override
@@ -40,8 +51,14 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.DemoVH> {
     }
 
     public static class DemoVH extends RecyclerView.ViewHolder {
+
+
         public DemoVH(@NonNull View itemView) {
+
             super(itemView);
+
         }
+
+
     }
 }

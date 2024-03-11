@@ -38,7 +38,32 @@
             android:textColor="@color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
+
     </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/baseline_home_24" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/kisspng_alarm_clocks_computer_icons_clip_art_timer_clock_svg_png_icon_free_download_4_7929_onlin_5b6bff31d6dec1_7844015815338043378801"
+            android:isScrollContainer="true"
+
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/baseline_person_24"
+            android:text="" />
+    </com.google.android.material.tabs.TabLayout>
 
     <Button
         android:id="@+id/button6"
@@ -52,101 +77,10 @@
         android:text="Add Beneficiary"
         android:textColor="#F1E5E5" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Recycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10px"
-        android:layout_marginLeft="10px"
-        android:layout_marginEnd="10px"
-        android:layout_marginRight="10px"
-        android:layout_marginBottom="508dp"
-        android:background="@drawable/border_scrollview">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border_scrollview">
-
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="131dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
-                android:text="Update"
-                android:textColor="@color/white"
-                app:backgroundTint="#D37B7B"
-                app:layout_constraintBottom_toTopOf="@+id/button4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="169dp"
-                android:layout_height="32dp"
-                android:fontFamily="@font/blinker_bold"
-                android:gravity="center"
-                android:text="Test  patient"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold"
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button3"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Age : "
-                android:textColor="#403D3D"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/Mobile3"
-                app:layout_constraintHorizontal_bias="0.275"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name"
-                app:layout_constraintVertical_bias="0.238" />
-
-            <TextView
-                android:id="@+id/Mobile3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="84dp"
-                android:layout_marginLeft="84dp"
-                android:layout_marginTop="24dp"
-                android:text="Mobile No : "
-                android:textColor="#393535"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button4"
-                app:layout_constraintHorizontal_bias="0.085"
-                app:layout_constraintStart_toStartOf="@+id/name"
-                app:layout_constraintTop_toBottomOf="@+id/name"
-                app:layout_constraintVertical_bias="0.238" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="131dp"
-                android:layout_height="48dp"
-                android:text="View"
-                android:textColor="@color/white"
-                app:backgroundTint="#D37B7B"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/button3"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/button3" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
