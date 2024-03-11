@@ -26,7 +26,7 @@
             super.onCreate(savedInstanceState);
             setContentView(R.layout.lactating_register);
             ButtonClickListener listener;
-            listener = (ButtonClickListener) new LactatingMother_add();
+
             name = findViewById(R.id.edit1);
             birthDate = findViewById(R.id.edit2);
             birthYear = findViewById(R.id.edit3);
@@ -63,14 +63,9 @@
                     // Handle the case where no RadioButton is selected
                     Toast.makeText(LactatingMother_register.this, "Please select gender", Toast.LENGTH_SHORT).show();
                 }
-//                da.addNewLayout();
+                startActivity(new Intent(getApplicationContext(),Pregnant_add.class));
 
-                listener.onButtonClick();
-                Intent intent = new Intent(LactatingMother_register.this, List1.class);
-                    intent.putExtra("Age",age);
-                intent.putExtra("Mobile",mobileNon);
 
-                    startActivity(intent);
             });
         }
         public void sendSms(String number,String message) {
