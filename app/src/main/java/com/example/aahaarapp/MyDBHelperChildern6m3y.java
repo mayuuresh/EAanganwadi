@@ -4,15 +4,15 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
 import android.database.sqlite.SQLiteOpenHelper;
+
 import androidx.annotation.Nullable;
 
-public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
-    private static final String DB_NAME = "Children3y6yRegister";
+public class MyDBHelperChildern6m3y extends SQLiteOpenHelper {
+    private static final String DB_NAME = "Children6m3yRegister";
     private static final int DB_VERSION = 1;
 
-    private static final String TABLE_NAME_Child = "children3y6y";
+    private static final String TABLE_NAME_Child = "children6m3y";
     private static final String Name = "Name";
     private static final String Mother_Name = "MotherName";
     private static final String Mobile = "MobileNo";
@@ -28,7 +28,7 @@ public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
     private static final String Health_Service = "HealthService";
 
 
-    public MyDBHelperChildren3y6yRegister(@Nullable Context context) {
+    public MyDBHelperChildern6m3y (@Nullable Context context) {
         super(context, DB_NAME,null,DB_VERSION);
     }
 
@@ -104,4 +104,5 @@ public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
 }

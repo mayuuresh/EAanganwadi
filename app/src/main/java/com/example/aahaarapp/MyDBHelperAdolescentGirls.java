@@ -2,6 +2,7 @@ package com.example.aahaarapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -49,5 +50,18 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
         values.put(mother,mother);
         db.insert(TABLE_NAME, null, values);
         db.close();
+    }
+
+    public Cursor readAllData()
+    {
+        String query = "SELECT * FROM " + TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null)
+        {
+            cursor = db.rawQuery(query,null);
+        }
+        return cursor;
     }
 }
