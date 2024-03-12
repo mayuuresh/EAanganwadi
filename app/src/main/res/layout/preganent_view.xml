@@ -42,7 +42,35 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_marginBottom="5dp"/>
+
         </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/baseline_home_24" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/awc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/kisspng_alarm_clocks_computer_icons_clip_art_timer_clock_svg_png_icon_free_download_4_7929_onlin_5b6bff31d6dec1_7844015815338043378801"
+
+                android:isScrollContainer="true" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/baseline_person_24"
+                android:text="" />
+        </com.google.android.material.tabs.TabLayout>
 
         <TextView
             android:id="@+id/textViewDateTime"
@@ -146,7 +174,7 @@
                 tools:ignore="TextSizeCheck" />
 
             <EditText
-                android:id="@+id/delivary"
+                android:id="@+id/height_baby"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_margin="8dp"
@@ -211,7 +239,7 @@
                  android:textSize="17dp"/>
 
              <EditText
-                 android:id="@+id/iron"
+                 android:id="@+id/height2"
                  android:layout_width="match_parent"
                  android:layout_height="48dp"
                  android:layout_margin="8dp"
@@ -249,7 +277,7 @@
                  tools:ignore="TextSizeCheck" />
 
              <EditText
-                 android:id="@+id/fat1"
+                 android:id="@+id/hemo"
                  android:layout_width="match_parent"
                  android:layout_height="48dp"
                  android:layout_margin="8dp"
@@ -290,7 +318,7 @@
 
 
             <CheckBox
-                android:id="@+id/allopath1"
+                android:id="@+id/FalicAcid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Falic Acid"
@@ -299,7 +327,7 @@
                 tools:ignore="TextSizeCheck" />
 
             <CheckBox
-                android:id="@+id/homopathy1"
+                android:id="@+id/Iron"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Iron"
@@ -308,7 +336,7 @@
                 tools:ignore="TextSizeCheck" />
 
             <CheckBox
-                android:id="@+id/ayush1"
+                android:id="@+id/Vitamin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Vitamin"

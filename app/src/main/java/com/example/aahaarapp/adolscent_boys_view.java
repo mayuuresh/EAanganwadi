@@ -2,22 +2,19 @@ package com.example.aahaarapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.tabs.TabLayout;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-public class Pregnant_view extends AppCompatActivity{
+public class adolscent_boys_view extends AppCompatActivity {
     TabLayout tabLayout;
 
-    public void onCreate( Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.preganent_view);
+        setContentView(R.layout.adolescent_boys_view);
         tabLayout = findViewById(R.id.tabLayout);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -53,14 +50,5 @@ public class Pregnant_view extends AppCompatActivity{
                 // Handle tab reselection (optional)
             }
         });
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-        String currentDateAndTime = sdf.format(new Date());
-
-        // Find the TextView in your XML layout
-        TextView textViewDateTime = findViewById(R.id.textViewDateTime);
-
-        // Set the current date and time to the TextView
-        textViewDateTime.setText(currentDateAndTime);
-
     }
 }

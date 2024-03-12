@@ -28,14 +28,14 @@ public class Children0M6MNutrition extends AppCompatActivity {
         Vitamin1 = findViewById(R.id.Vitamin1);
         Calcium1 = findViewById(R.id.Calcium1);
 
-        allopath = findViewById(R.id.allopath1);
-        homopathy = findViewById(R.id.homopathy1);
-        ayush = findViewById(R.id.ayush1);
+        allopath = findViewById(R.id.FalicAcid);
+        homopathy = findViewById(R.id.Iron);
+        ayush = findViewById(R.id.Vitamin);
 
-        height = findViewById(R.id.iron);
+        height = findViewById(R.id.height2);
         weight = findViewById(R.id.weight);
-        fat = findViewById(R.id.fat1);
-        hemoglobin = findViewById(R.id.fat1);
+        fat = findViewById(R.id.hemo);
+        hemoglobin = findViewById(R.id.hemo);
 
 
         if(FalicAcid1.isSelected())

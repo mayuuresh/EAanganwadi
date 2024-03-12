@@ -66,8 +66,12 @@
         <activity android:name=".List1"/>
         <activity android:name=".Pregnant_view"/>
         <activity android:name=".Profile"/>
-
-
+        <activity android:name="Lactating_View"/>
+        <activity android:name=".Child_3y_6y_view"/>
+        <activity android:name=".Children_0m_6m_view"/>
+        <activity android:name=".Adolescent_girls_view"/>
+<activity android:name=".adolscent_boys_view"/>
+        <activity android:name=".Children_6m_3_view"/>
 
         <activity
 

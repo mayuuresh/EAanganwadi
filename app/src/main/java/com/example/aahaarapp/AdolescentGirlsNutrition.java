@@ -2,7 +2,6 @@ package com.example.aahaarapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -26,7 +25,7 @@ public class AdolescentGirlsNutrition extends AppCompatActivity {
         allopath = findViewById(R.id.allopath2);
         homopathy = findViewById(R.id.homopathy2);
         ayush = findViewById(R.id.ayush2);
-        iron1 = findViewById(R.id.iron);
+        iron1 = findViewById(R.id.height2);
         if(allopath.isSelected())
         {
             service=service+","+(allopath.getText().toString());

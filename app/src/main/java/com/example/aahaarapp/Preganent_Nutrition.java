@@ -52,9 +52,9 @@ public class Preganent_Nutrition extends AppCompatActivity {
         Protein= findViewById(R.id.protein);
 
 
-        height = findViewById(R.id.height);
+        height = findViewById(R.id.height2);
         weight = findViewById(R.id.weight);
-        hemoglobin = findViewById(R.id.hemoglobin);
+        hemoglobin = findViewById(R.id.hemo);
 
 
         if(FalicAcid1.isSelected())
