@@ -46,6 +46,7 @@
         <activity android:name=".Preganent_Nutrition" />
         <activity android:name=".Preganent_Register"/>
         <activity android:name=".Children0M6MAdd"/>
+        <activity android:name=".Children0M6MRegister"/>
         <activity android:name=".Children0M6MNutrition"/>
         <activity android:name=".LactatingMother_register"/>
         <activity android:name=".Children3Y6YAdd"/>

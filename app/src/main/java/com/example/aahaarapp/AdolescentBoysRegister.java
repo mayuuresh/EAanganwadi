@@ -18,7 +18,6 @@ public class AdolescentBoysRegister extends AppCompatActivity {
     Button register;
 
     TabLayout tabLayout;
-    TabItem home,awc,profile;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -26,10 +25,8 @@ public class AdolescentBoysRegister extends AppCompatActivity {
 
 
         setContentView(R.layout.adolescent_boys_register);
-         tabLayout = findViewById(R.id.tabLayout);
-         home=findViewById(R.id.home);
-         awc=findViewById(R.id.awc);
-         profile=findViewById(R.id.profile);
+
+        tabLayout = findViewById(R.id.tabLayout);
         mobile1 =findViewById(R.id.Mobile);
 
         name1 = findViewById(R.id.Name);

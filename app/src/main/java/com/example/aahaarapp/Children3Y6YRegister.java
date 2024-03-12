@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.tabs.TabLayout;
+
 public class Children3Y6YRegister extends AppCompatActivity {
 
     EditText name, motherName, mobileNo, weight,height;
@@ -19,10 +21,12 @@ public class Children3Y6YRegister extends AppCompatActivity {
     RadioButton r;
     Button btn;
     MyDBHelperChildren3y6yRegister helper;
+    TabLayout tabLayout;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.children_3y_6y_register);
-
+        tabLayout = findViewById(R.id.tabLayout1);
         name = findViewById(R.id.edit1);
         motherName = findViewById(R.id.edit2);
         mobileNo = findViewById(R.id.edit3);
@@ -31,7 +35,40 @@ public class Children3Y6YRegister extends AppCompatActivity {
 
         btn = findViewById(R.id.submit);
         helper = new MyDBHelperChildren3y6yRegister(this);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                // Handle tab selection (which effectively is a click)
+                int position = tab.getPosition();
+                switch (position) {
+                    case 0:
+                        // Handle click on Tab 1
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        // Handle click on Tab 2
+                        Intent intent1 = new Intent(getApplicationContext(), Profile.class);
+                        startActivity(intent1);
+                        break;
+                    case 2:
+                        // Handle click on Tab 3
+                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent2);
+                        break;
+                }
+            }
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                // Handle tab unselection (optional)
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                // Handle tab reselection (optional)
+            }
+        });
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

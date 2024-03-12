@@ -88,6 +88,7 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/cycle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -119,7 +120,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/height"
+                android:id="@+id/iron"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_margin="8dp"
@@ -158,19 +159,19 @@
                 tools:ignore="TextSizeCheck" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/allopath2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Allopath" />
 
             <CheckBox
-                android:id="@+id/checkBox4"
+                android:id="@+id/homopathy2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hamopathy" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/ayush2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ayush" />

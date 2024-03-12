@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aahaarapp.Adapter.ToDoAdapter;
 import com.example.aahaarapp.Model.ToDoModel;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,16 +32,52 @@ public class Pregnant_add extends AppCompatActivity {
     MyDBHelperPregnantWomen helper;
     public String data;
     ListView userlist;
+    TabLayout tabLayout;
+
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pregnant_add);
+        tabLayout = findViewById(R.id.tabLayout);
         Add = findViewById(R.id.button6);
         userlist = findViewById(R.id.list);
         listItem = new ArrayList<>();
         helper=new MyDBHelperPregnantWomen(this);
         viewData();
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                // Handle tab selection (which effectively is a click)
+                int position = tab.getPosition();
+                switch (position) {
+                    case 0:
+                        // Handle click on Tab 1
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        // Handle click on Tab 2
+                        Intent intent1 = new Intent(getApplicationContext(), Profile.class);
+                        startActivity(intent1);
+                        break;
+                    case 2:
+                        // Handle click on Tab 3
+                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent2);
+                        break;
+                }
+            }
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                // Handle tab unselection (optional)
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                // Handle tab reselection (optional)
+            }
+        });
     userlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

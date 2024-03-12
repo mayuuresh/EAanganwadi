@@ -118,7 +118,7 @@
                  android:textSize="17dp"/>
 
              <EditText
-                 android:id="@+id/height"
+                 android:id="@+id/iron"
                  android:layout_width="match_parent"
                  android:layout_height="48dp"
                  android:layout_margin="8dp"
@@ -156,7 +156,7 @@
                  tools:ignore="TextSizeCheck" />
 
              <EditText
-                 android:id="@+id/hemoglobin"
+                 android:id="@+id/fat1"
                  android:layout_width="match_parent"
                  android:layout_height="48dp"
                  android:layout_margin="8dp"
@@ -197,7 +197,7 @@
 
 
             <CheckBox
-                android:id="@+id/FalicAcid"
+                android:id="@+id/allopath1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Falic Acid"
@@ -206,7 +206,7 @@
                 tools:ignore="TextSizeCheck" />
 
             <CheckBox
-                android:id="@+id/Iron"
+                android:id="@+id/homopathy1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Iron"
@@ -215,7 +215,7 @@
                 tools:ignore="TextSizeCheck" />
 
             <CheckBox
-                android:id="@+id/Vitamin"
+                android:id="@+id/ayush1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Vitamin"

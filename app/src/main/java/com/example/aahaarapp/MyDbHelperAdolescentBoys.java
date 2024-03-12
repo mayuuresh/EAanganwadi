@@ -22,6 +22,15 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
     private static final String mother = "Mother";
 
     private static final String mobileNo = "Mobile_No";
+    private static final String supplement = "Supplement";
+    private static final String energy = "Energy";
+    private static final String protin = "Protin";
+    private static final String fat = "Fat";
+    private static final String solids = "Food_Solids";
+    private static final String hemo = "Hemoglobin";
+    private static final String service = "Service";
+
+
     public MyDbHelperAdolescentBoys(@Nullable Context context) {
         super(context,DB_NAME,null, DB_VERSION);
     }
@@ -31,7 +40,7 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
         String query_reg = "CREATE TABLE " + TABLE_NAME + " ("
                 + mobileNo + " TEXT PRIMARY KEY, "
                 + name + "TEXT" + dob + "TEXT" + yob + "TEXT"
-                + father + " TEXT"+mother+"TEXT)";
+                + father + " TEXT"+mother+"TEXT"+supplement+"TEXT"+energy+"TEXT"+protin+"TEXT"+fat+"TEXT"+solids+"TEXT"+hemo+"TEXT"+service+"TEXT)";
         db.execSQL(query_reg);
     }
 
@@ -52,7 +61,22 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
+    public void updateColumns(String cycle1,String iron1,String hemo1,String serrvice1,String unit1,String height1,String weight1)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
 
+        values.put(supplement,cycle1);
+        values.put(energy,iron1);
+        values.put(protin,hemo1);
+        values.put(fat,serrvice1);
+        values.put(solids,unit1);
+        values.put(hemo,height1);
+        values.put(service,weight1);
+
+        db.insert(TABLE_NAME, null, values);
+        db.close();
+    }
     public Cursor readAllData()
     {
         String query = "SELECT * FROM " + TABLE_NAME;

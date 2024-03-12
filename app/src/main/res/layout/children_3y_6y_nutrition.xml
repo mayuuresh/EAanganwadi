@@ -131,7 +131,7 @@
                 android:textSize="17dp"/>
 
             <EditText
-                android:id="@+id/height"
+                android:id="@+id/iron"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_margin="8dp"
@@ -241,7 +241,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/hemoglobin"
+                android:id="@+id/fat1"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_margin="8dp"

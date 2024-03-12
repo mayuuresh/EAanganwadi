@@ -34,10 +34,10 @@ public class Children3Y6YNutrition extends AppCompatActivity {
         homopathy = findViewById(R.id.homopathy);
         ayush = findViewById(R.id.ayush);
 
-        height = findViewById(R.id.height);
+        height = findViewById(R.id.iron);
         weight = findViewById(R.id.weight);
         fat = findViewById(R.id.fat);
-        hemoglobin = findViewById(R.id.hemoglobin);
+        hemoglobin = findViewById(R.id.fat1);
 
 
         if(FalicAcid1.isSelected())
