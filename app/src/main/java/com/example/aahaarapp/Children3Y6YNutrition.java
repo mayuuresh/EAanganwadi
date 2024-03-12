@@ -24,7 +24,7 @@ public class Children3Y6YNutrition extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.children_3y_6y_nutrition);
-
+        mobileno = getIntent().getStringExtra("number");
         FalicAcid1 = findViewById(R.id.FalicAcid1);
         Iron1 = findViewById(R.id.Iron1);
         Vitamin1 = findViewById(R.id.Vitamin1);

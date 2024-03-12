@@ -19,7 +19,7 @@ public class Fragment_view extends BottomSheetDialogFragment {
 
     private static final String TAG = "Fragment_view";
     private Button b1,b2;
-
+    String number;
     public static Fragment_view newInstance(){
         return new Fragment_view();
     }
@@ -40,13 +40,13 @@ public class Fragment_view extends BottomSheetDialogFragment {
 
         Bundle bundle = getArguments();
         if(bundle != null){
-            String number = bundle.getString("number");
+            number = bundle.getString("number");
         }
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Preganent_Nutrition.class);
-                intent.putExtra("number", "number");
+                intent.putExtra("number", number);
                 startActivity(intent);
             }
         });
@@ -55,7 +55,7 @@ public class Fragment_view extends BottomSheetDialogFragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Pregnant_view.class);
-                intent.putExtra("number", "number");
+                intent.putExtra("number", number);
                 startActivity(intent);
             }
         });
