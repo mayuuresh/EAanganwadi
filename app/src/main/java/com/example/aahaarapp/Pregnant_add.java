@@ -92,23 +92,6 @@ public class Pregnant_add extends AppCompatActivity {
         }
     });
 
-//
-//        taskRecyclerView= findViewById(R.id.Recycler);
-//        taskRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        taskAdapter=new ToDoAdapter(this);
-//        taskRecyclerView.setAdapter(taskAdapter);
-//        taskList =new ArrayList<>();
-//
-//        ToDoModel task=new ToDoModel();
-//        task.setName("Rahul");
-//        task.setMobile("1234567890");
-//        task.setBirth("1dfsg");
-//
-//        taskList.add(task);
-//        taskList.add(task);
-//        taskList.add(task);
-//
-//        taskAdapter.setTasks(taskList);
         Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

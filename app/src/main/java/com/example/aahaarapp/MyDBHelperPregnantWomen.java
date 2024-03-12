@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 
@@ -20,6 +21,13 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
     private static final String mobileNo = "Mobile_No";
     private static final String pregnancy = "First_Pregnancy";
     private static final String miscarriage = "Miscarriage";
+    private static final String HeightUnit = "hunit";
+    private static final String Height= "height";
+    private static final String Weight = "weight";
+    private static final String Hemoglobin = "hemoglobin";
+    private static final String Nutritional_Supplements = "Nutrition";
+    private static final String Energy= "energy";
+    private static final String protein = "protein";
     public MyDBHelperPregnantWomen(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -33,7 +41,14 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
                 + dob + " TEXT, "
                 + yob + " TEXT, "
                 + pregnancy + " TEXT, "
-                + miscarriage + " TEXT )";
+                + miscarriage + " TEXT, "
+                + HeightUnit + " TEXT, "
+                + Height + " TEXT, "
+                + Weight + " TEXT, "
+                + Hemoglobin + " TEXT, "
+                + Nutritional_Supplements + " TEXT, "
+                + Energy + " TEXT, "
+                + protein + " TEXT )";
         db.execSQL(Query);
 
     }
@@ -47,6 +62,13 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
         values.put(yob,yob1);
         values.put(pregnancy,pregnancy1);
         values.put(miscarriage,miscarriage1);
+        values.put(HeightUnit, "");
+        values.put(Height, "");
+        values.put(Weight, "");
+        values.put(Hemoglobin,"");
+        values.put(Nutritional_Supplements, "");
+        values.put(Energy, "");
+        values.put(protein, "");
         db.insert(TABLE_NAME_Reg, null, values);
         db.close();
     }
@@ -74,5 +96,19 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
         String query = "SELECT * FROM " + TABLE_NAME_Reg;
         Cursor cursor = db.rawQuery(query,null);
         return cursor;
+    }
+
+    public void updateColumns(String value, String radion, String value2, String value3, String value4, String value5, String value6, String value7) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(HeightUnit, radion);
+        values.put(Height, value2);
+        values.put(Weight, value3);
+        values.put(Hemoglobin,value4);
+        values.put(Nutritional_Supplements, value5);
+        values.put(Energy, value6);
+        values.put(protein, value7);
+        db.update(TABLE_NAME_Reg, values, mobileNo + " = ?", new String[]{value});
+        db.close();
     }
 }

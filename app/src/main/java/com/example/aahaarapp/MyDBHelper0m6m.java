@@ -2,6 +2,7 @@ package com.example.aahaarapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import android.database.sqlite.SQLiteOpenHelper;
@@ -79,5 +80,32 @@ public class MyDBHelper0m6m extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    public void updateColumns(String id, String value1, String value2, String value3,String value4,String value5,String value6,String value7) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Nutritional, value1);
+        values.put(Energy, value2);
+        values.put(Protein, value3);
+        values.put(Fat, value4);
+        values.put(Food_Solid, value5);
+        values.put(Hemoglobin, value6);
+        values.put(Health_Service, value7);
+        db.update(TABLE_NAME_Lac, values, Mobile_number + " = ?", new String[]{id});
+        db.close();
+    }
+
+    public Cursor readAllData()
+    {
+        String query = "SELECT * FROM " + TABLE_NAME_Lac;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null)
+        {
+            cursor = db.rawQuery(query,null);
+        }
+        return cursor;
     }
 }

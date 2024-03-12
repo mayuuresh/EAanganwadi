@@ -97,6 +97,26 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
         }
         return cursor;
     }
+    public Cursor viewData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_Lac;
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor;
+    }
+
+    public void updateColumns(String value, String radion, String value2, String value3, String value4, String value5, String value6) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Height_Unit, radion);
+        values.put(Height, value2);
+        values.put(Weight, value3);
+        values.put(Hemoglobin,value4);
+        values.put(Provided_With, value5);
+        values.put(Health_Service, value6);
+        db.update(TABLE_NAME_Lac, values, Mobile_number + " = ?", new String[]{value});
+        db.close();
+    }
 
 
 
