@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +29,7 @@ public class Pregnant_add extends AppCompatActivity {
     ArrayList<String> listItem;
     ArrayAdapter adapter;
     MyDBHelperPregnantWomen helper;
+    public String data;
     ListView userlist;
     @Override
     public void onCreate( Bundle savedInstanceState) {
@@ -44,6 +46,12 @@ public class Pregnant_add extends AppCompatActivity {
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             String text=userlist.getItemAtPosition(i).toString();
             Toast.makeText(Pregnant_add.this,""+text,Toast.LENGTH_SHORT).show();
+            Bundle  bundle = new Bundle();
+            bundle.putString("number",data);
+            Fragment_view v = new Fragment_view();
+            v.setArguments(bundle);
+            v.show(getSupportFragmentManager(),"Fragment_view");
+
         }
     });
 
@@ -80,6 +88,7 @@ public class Pregnant_add extends AppCompatActivity {
         }
         else{
             while(cursor.moveToNext()){
+                data=cursor.getString(0);
                 listItem.add("Name:-"+cursor.getString(1)+"\nMobile:- "+cursor.getString(0)+"           Date of Birth:-"+cursor.getString(2));
             }
             adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,listItem);
