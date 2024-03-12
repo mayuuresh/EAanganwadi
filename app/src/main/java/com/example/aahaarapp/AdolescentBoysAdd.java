@@ -21,4 +21,6 @@ public class AdolescentBoysAdd extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), AdolescentBoysRegister.class));
             }
         });
+
+
 }}

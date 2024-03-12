@@ -32,6 +32,7 @@
             DemoAdapter adapter = new DemoAdapter(items);
             recyclerView.setAdapter(adapter);
             Cursor cursor = helper.readAllData();
+            int i=0;
             while (cursor.moveToNext()) {
                 adapter.addNewLayout();
             }

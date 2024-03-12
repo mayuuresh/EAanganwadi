@@ -64,6 +64,7 @@
         <activity android:name=".AdolescentBoysNutrition"/>
         <activity android:name=".List1"/>
         <activity android:name=".Pregnant_view"/>
+        <activity android:name=".Profile"/>
 
 
 

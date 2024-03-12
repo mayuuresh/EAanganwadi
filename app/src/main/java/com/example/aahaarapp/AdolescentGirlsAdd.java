@@ -7,9 +7,13 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
+
 public class AdolescentGirlsAdd extends AppCompatActivity {
     Button btn;
-
+    TabLayout tabLayout;
+    TabItem home,awc,profile;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState) ;
         setContentView(R.layout.adolescent_girls_add);

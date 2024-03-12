@@ -26,11 +26,15 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query_reg = "CREATE TABLE " + TABLE_NAME_Reg + " ("
+
+        String Query = "CREATE TABLE " + TABLE_NAME_Reg + " ("
                 + mobileNo + " TEXT PRIMARY KEY, "
-                + name + "TEXT" + dob + "TEXT" + yob + "TEXT"
-                + pregnancy + " TEXT"+miscarriage+"TEXT)";
-        db.execSQL(query_reg);
+                + name + " TEXT, "
+                + dob + " TEXT, "
+                + yob + " TEXT, "
+                + pregnancy + " TEXT, "
+                + miscarriage + " TEXT )";
+        db.execSQL(Query);
 
     }
     public void registeruser(String name1,String dob1,String yob1,String mobile1,String pregnancy1,String miscarriage1)
@@ -62,6 +66,13 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
         {
             cursor = db.rawQuery(query,null);
         }
+        return cursor;
+    }
+    public Cursor viewData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_Reg;
+        Cursor cursor = db.rawQuery(query,null);
         return cursor;
     }
 }

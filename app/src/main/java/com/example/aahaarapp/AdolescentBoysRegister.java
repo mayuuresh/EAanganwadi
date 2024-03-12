@@ -52,7 +52,7 @@ public class AdolescentBoysRegister extends AppCompatActivity {
                         break;
                     case 1:
                         // Handle click on Tab 2
-                        Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent1 = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent1);
                         break;
                     case 2:
