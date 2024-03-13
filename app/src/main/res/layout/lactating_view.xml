@@ -164,7 +164,7 @@
                 tools:ignore="TextSizeCheck" />
 
             <EditText
-                android:id="@+id/height_baby"
+                android:id="@+id/yob"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_margin="8dp"
@@ -295,7 +295,7 @@
 
 
             <EditText
-                android:id="@+id/height4"
+                android:id="@+id/provided"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_margin="8dp"
@@ -313,7 +313,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/height2"
+                android:id="@+id/avail"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_margin="8dp"

@@ -23,7 +23,7 @@ public class Pregnant_view extends AppCompatActivity{
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preganent_view);
-        number=getIntent().getStringExtra("number");;
+        number=getIntent().getStringExtra("number");
         helper = new MyDBHelperPregnantWomen(this);
         name=findViewById(R.id.name);
         dob=findViewById(R.id.date);
@@ -38,6 +38,8 @@ public class Pregnant_view extends AppCompatActivity{
         protein=findViewById(R.id.protein);
 
         Cursor data = helper.readAllData(number);
+        data.moveToFirst();
+
         mobile.setText(data.getString(0));
         name.setText(data.getString(1));
         dob.setText(data.getString(2));
@@ -49,6 +51,7 @@ public class Pregnant_view extends AppCompatActivity{
         nutrition.setText(data.getString(10));
         energy.setText(data.getString(11));
         protein.setText(data.getString(12));
+
 
         tabLayout = findViewById(R.id.tabLayout);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

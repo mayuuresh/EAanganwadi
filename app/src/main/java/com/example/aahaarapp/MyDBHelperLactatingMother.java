@@ -83,10 +83,9 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-
-    public Cursor readAllData()
+    public Cursor readAllData(String number)
     {
-        String query = "SELECT * FROM " + TABLE_NAME_Lac;
+        String query = "SELECT * FROM " + TABLE_NAME_Lac+ " WHERE " + Mobile_number + " = " + number;
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
@@ -96,6 +95,8 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+
     public Cursor viewData()
     {
         SQLiteDatabase db = this.getReadableDatabase();
