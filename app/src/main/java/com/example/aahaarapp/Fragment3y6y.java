@@ -13,9 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.twilio.rest.verify.v2.service.ratelimit.BucketUpdater;
 
-public class Fragment_view extends BottomSheetDialogFragment {
+public class Fragment3y6y extends BottomSheetDialogFragment {
 
     private static final String TAG = "Fragment_view";
     private Button b1,b2;
@@ -27,8 +26,8 @@ public class Fragment_view extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       View v = inflater.inflate(R.layout.fragment,container,false);
-       return v;
+        View v = inflater.inflate(R.layout.fragment,container,false);
+        return v;
     }
 
     @Override
@@ -45,7 +44,7 @@ public class Fragment_view extends BottomSheetDialogFragment {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Preganent_Nutrition.class);
+                Intent intent = new Intent(getActivity(), Children3Y6YNutrition.class);
                 intent.putExtra("number", number);
                 startActivity(intent);
             }
@@ -54,7 +53,7 @@ public class Fragment_view extends BottomSheetDialogFragment {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Pregnant_view.class);
+                Intent intent = new Intent(getActivity(), Child_3y_6y_view.class);
                 intent.putExtra("number", number);
                 startActivity(intent);
             }

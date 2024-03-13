@@ -313,35 +313,6 @@
                         tools:ignore="TextSizeCheck" />
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Logout"
-                    android:layout_width="165dp"
-                    android:layout_height="165dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    app:cardBackgroundColor="@color/whiteish"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="5dp">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/daily" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="130dp"
-                        android:fontFamily="@font/opensans"
-                        android:text="DAILY TRACKING"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        tools:ignore="TextSizeCheck" />
-                </androidx.cardview.widget.CardView>
-
             </GridLayout>
 
         </LinearLayout>

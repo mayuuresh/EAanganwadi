@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Children0M6MNutrition">
+    tools:context=".AdolescentBoysNutrition">
 
 
     <LinearLayout
@@ -35,7 +35,7 @@
                 android:layout_width="341dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Children 0  to 6 months"
+                android:text="Adolscent Boys Nutrition"
                 android:gravity="center"
                 android:textSize="25sp"
                 android:textStyle="bold"

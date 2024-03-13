@@ -11,12 +11,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.aahaarapp.Adapter.ToDoAdapter;
-import com.example.aahaarapp.Model.ToDoModel;
+
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -24,9 +20,7 @@ import java.util.List;
 
 public class Pregnant_add extends AppCompatActivity {
     Button Add,update,view;
-    private RecyclerView taskRecyclerView;
-    private ToDoAdapter taskAdapter;
-    private List<ToDoModel> taskList;
+
     ArrayList<String> listItem;
     ArrayAdapter adapter;
     MyDBHelperPregnantWomen helper;

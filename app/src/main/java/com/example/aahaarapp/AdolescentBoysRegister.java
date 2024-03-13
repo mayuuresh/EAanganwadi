@@ -16,6 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 public class AdolescentBoysRegister extends AppCompatActivity {
     EditText mobile1,name1,dob1,yob1,mother1,father1;
     Button register;
+    MyDbHelperAdolescentBoys helper;
 
     TabLayout tabLayout;
 
@@ -35,7 +36,7 @@ public class AdolescentBoysRegister extends AppCompatActivity {
         register=findViewById((R.id.Register));
         father1 = findViewById((R.id.Father));
         mother1 = findViewById((R.id.Mother));
-
+        helper = new MyDbHelperAdolescentBoys(this);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -71,7 +72,6 @@ public class AdolescentBoysRegister extends AppCompatActivity {
             }
         });
 
-        MyDBHelperAdolescentGirls helper = new MyDBHelperAdolescentGirls(this);
 
 //        home.setOnClickListener(view -> {
 //            Intent intent = new Intent(getApplicationContext(), MainActivity.class);

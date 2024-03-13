@@ -69,8 +69,6 @@ public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
         values.put(Food_Solids,"");
         values.put(Hemoglobin,"");
         values.put(Health_Service,"");
-
-
         db.insert(TABLE_NAME_Child, null, values);
         db.close();
     }
@@ -102,6 +100,13 @@ public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
         {
             cursor = db.rawQuery(query,null);
         }
+        return cursor;
+    }
+    public Cursor viewData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_Child;
+        Cursor cursor = db.rawQuery(query,null);
         return cursor;
     }
 }

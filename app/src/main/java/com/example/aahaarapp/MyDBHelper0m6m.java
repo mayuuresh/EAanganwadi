@@ -72,7 +72,7 @@ public class MyDBHelper0m6m extends SQLiteOpenHelper {
         values.put(Fat,"");
         values.put(Food_Solid ,"");
         values.put(Hemoglobin ,"");
-
+        values.put(Health_Service ,"");
         db.insert(TABLE_NAME_Lac, null, values);
         db.close();
     }
@@ -106,6 +106,13 @@ public class MyDBHelper0m6m extends SQLiteOpenHelper {
         {
             cursor = db.rawQuery(query,null);
         }
+        return cursor;
+    }
+    public Cursor viewData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_Lac;
+        Cursor cursor = db.rawQuery(query,null);
         return cursor;
     }
 }

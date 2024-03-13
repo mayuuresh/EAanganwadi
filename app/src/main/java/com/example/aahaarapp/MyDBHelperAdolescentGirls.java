@@ -38,8 +38,18 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String query_reg = "CREATE TABLE " + TABLE_NAME + " ("
                 + mobileNo + " TEXT PRIMARY KEY, "
-                + name + "TEXT" + dob + "TEXT" + yob + "TEXT"
-                + father + " TEXT"+mother+"TEXT"+cycle+"TEXT"+iron+"TEXT"+hemo+"TEXT"+serrvice+"TEXT"+unit+"TEXT"+weight+"TEXT)";
+                + name + " TEXT, "
+                + dob + " TEXT, "
+                + yob + " TEXT, "
+                + father + " TEXT, "
+                + mother + " TEXT, "
+                + cycle + " TEXT, "
+                + iron + " TEXT, "
+                + hemo + " TEXT, "
+                + serrvice + " TEXT, "
+                + unit + " TEXT, "
+                + height + " TEXT, "
+                + weight + " TEXT)";
         db.execSQL(query_reg);
     }
 
@@ -47,26 +57,31 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-    public void registeruser(String name1,String dob1,String yob1,String mobile1,String father1,String mother1)
-    {
+    public void registeruser(String name1, String dob1, String yob1, String mobile1, String father1, String mother1) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(mobileNo, mobile1);
-        values.put(name,name1 );
-        values.put(dob,dob1);
-        values.put(yob,yob1);
-        values.put(father,father1);
-        values.put(mother,mother1);
-        values.put(cycle,"");
-        values.put(iron,"");
-        values.put(hemo,"");
-        values.put(serrvice,"");
-        values.put(unit,"");
-        values.put(height,"");
-        values.put(weight,"");
+        values.put(name, name1);
+        values.put(dob, dob1);
+        values.put(yob, yob1);
+        values.put(father, father1);
+        values.put(mother, mother1);
+        values.put(cycle, " ");
+        values.put(iron, " ");
+        values.put(hemo, " ");
+        values.put(serrvice, " ");
+        values.put(unit, " ");
+        values.put(height, " ");
+        values.put(weight, " ");
 
-        db.insert(TABLE_NAME, null, values);
-        db.close();
+        try {
+            db.insert(TABLE_NAME, null, values);
+        } catch (Exception e) {
+            // Handle the exception here
+            e.printStackTrace(); // Print the stack trace for debugging
+        } finally {
+            db.close();
+        }
     }
 
     public Cursor readAllData()
@@ -97,5 +112,12 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
 
         db.update(TABLE_NAME, values, mobileNo + " = ?", new String[]{id});
         db.close();
+    }
+    public Cursor viewData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME;
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor;
     }
 }

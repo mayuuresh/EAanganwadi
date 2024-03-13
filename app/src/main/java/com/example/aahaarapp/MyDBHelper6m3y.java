@@ -102,5 +102,12 @@ public class MyDBHelper6m3y extends SQLiteOpenHelper {
         }
         return cursor;
     }
+    public Cursor viewData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_Lac;
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor;
+    }
 }
 

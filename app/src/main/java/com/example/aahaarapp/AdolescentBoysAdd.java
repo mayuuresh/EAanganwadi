@@ -1,16 +1,28 @@
 package com.example.aahaarapp;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+
 public class AdolescentBoysAdd extends AppCompatActivity {
     Button btn;
+    ArrayList<String> listItem;
+    ArrayAdapter adapter;
+    MyDbHelperAdolescentBoys helper;
+    public String data;
+    ListView userlist;
     TabLayout tabLayout;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +31,10 @@ public class AdolescentBoysAdd extends AppCompatActivity {
         setContentView(R.layout.adolescent_boys_add);
         tabLayout = findViewById(R.id.tabLayout);
         btn=findViewById(R.id.button6);
+        userlist = findViewById(R.id.list);
+        listItem = new ArrayList<>();
+        helper=new MyDbHelperAdolescentBoys(this);
+        viewData();
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -60,6 +76,35 @@ public class AdolescentBoysAdd extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), AdolescentBoysRegister.class));
             }
         });
+        userlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String text=userlist.getItemAtPosition(i).toString();
+                Toast.makeText(AdolescentBoysAdd.this,""+text,Toast.LENGTH_SHORT).show();
+                Bundle  bundle = new Bundle();
+                bundle.putString("number",data);
+                Fragmnet_Boy v = new Fragmnet_Boy();
+                v.setArguments(bundle);
+                v.show(getSupportFragmentManager(),"Fragment_view");
+
+            }
+        });
 
 
-}}
+}
+    private void viewData() {
+        Cursor cursor=helper.viewData();
+        if(cursor.getCount()==0){
+            Toast.makeText(this,"No data to show",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            while(cursor.moveToNext()){
+                data=cursor.getString(0);
+                listItem.add("Name:-"+cursor.getString(1)+"\nMobile:- "+cursor.getString(0)+"           Date of Birth:-"+cursor.getString(2));
+            }
+            adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,listItem);
+            userlist.setAdapter(adapter);
+        }
+    }
+
+}

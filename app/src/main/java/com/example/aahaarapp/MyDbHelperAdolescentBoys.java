@@ -39,8 +39,18 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String query_reg = "CREATE TABLE " + TABLE_NAME + " ("
                 + mobileNo + " TEXT PRIMARY KEY, "
-                + name + "TEXT" + dob + "TEXT" + yob + "TEXT"
-                + father + " TEXT"+mother+"TEXT"+supplement+"TEXT"+energy+"TEXT"+protin+"TEXT"+fat+"TEXT"+solids+"TEXT"+hemo+"TEXT"+service+"TEXT)";
+                + name + " TEXT, "
+                + dob + " TEXT, "
+                + yob + " TEXT, "
+                + father + " TEXT, "
+                + mother + " TEXT, "
+                + supplement + " TEXT, "
+                + energy + " TEXT, "
+                + protin + " TEXT, "
+                + fat + " TEXT, "
+                + solids + " TEXT, "
+                + hemo + " TEXT, "
+                + service + " TEXT)";
         db.execSQL(query_reg);
     }
 
@@ -48,7 +58,7 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-    public void registeruser(String name1,String dob1,String yob1,String mobile1,String father,String mother)
+    public void registeruser(String name1,String dob1,String yob1,String mobile1,String father1,String mother1)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -56,8 +66,15 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
         values.put(name,name1 );
         values.put(dob,dob1);
         values.put(yob,yob1);
-        values.put(father,father);
-        values.put(mother,mother);
+        values.put(father,father1);
+        values.put(mother,mother1);
+        values.put(supplement," ");
+        values.put(energy," ");
+        values.put(protin," ");
+        values.put(fat," ");
+        values.put(solids," ");
+        values.put(hemo," ");
+        values.put(service," ");
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
@@ -87,6 +104,13 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
         {
             cursor = db.rawQuery(query,null);
         }
+        return cursor;
+    }
+    public Cursor viewData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME;
+        Cursor cursor = db.rawQuery(query,null);
         return cursor;
     }
 }

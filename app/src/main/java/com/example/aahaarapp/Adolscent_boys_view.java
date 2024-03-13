@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class adolscent_boys_view extends AppCompatActivity {
+public class Adolscent_boys_view extends AppCompatActivity {
     TabLayout tabLayout;
 
     @Override

@@ -19,6 +19,7 @@ public class AdolescentGirlsRegister extends AppCompatActivity
     Button register;
     String email,pass,repass;
     TabLayout tabLayout;
+    MyDBHelperAdolescentGirls helper;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -33,7 +34,7 @@ public class AdolescentGirlsRegister extends AppCompatActivity
         register=findViewById((R.id.Register));
 
 
-        MyDBHelperAdolescentGirls helper = new MyDBHelperAdolescentGirls(this);
+        helper= new MyDBHelperAdolescentGirls(this);
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

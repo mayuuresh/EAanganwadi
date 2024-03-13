@@ -13,22 +13,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-import com.twilio.rest.verify.v2.service.ratelimit.BucketUpdater;
 
-public class Fragment_view extends BottomSheetDialogFragment {
+public class Fragmnet_Boy extends BottomSheetDialogFragment {
 
     private static final String TAG = "Fragment_view";
     private Button b1,b2;
     String number;
-    public static Fragment_view newInstance(){
-        return new Fragment_view();
+    public static Fragmnet_Boy newInstance(){
+        return new Fragmnet_Boy();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       View v = inflater.inflate(R.layout.fragment,container,false);
-       return v;
+        View v = inflater.inflate(R.layout.fragment,container,false);
+        return v;
     }
 
     @Override
@@ -45,7 +44,7 @@ public class Fragment_view extends BottomSheetDialogFragment {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Preganent_Nutrition.class);
+                Intent intent = new Intent(getActivity(), AdolescentBoysNutrition.class);
                 intent.putExtra("number", number);
                 startActivity(intent);
             }
@@ -54,7 +53,7 @@ public class Fragment_view extends BottomSheetDialogFragment {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Pregnant_view.class);
+                Intent intent = new Intent(getActivity(), Adolscent_boys_view.class);
                 intent.putExtra("number", number);
                 startActivity(intent);
             }
