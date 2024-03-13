@@ -18,13 +18,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class Logup extends AppCompatActivity {
 
     EditText mnumber,mmpin;
     Button mLoginBtn;
     TextView mRegisterBtn,forgotMpin,issue;
 
-
+    MyDbHelperAwc helper1;
     MyDBHeplerRegister helper = new MyDBHeplerRegister(this);
 
     @Override
@@ -38,7 +42,7 @@ public class Logup extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.login);
         forgotMpin=findViewById(R.id.ForgotMPIN);
         issue=findViewById(R.id.issue);
-
+helper1=new MyDbHelperAwc(this);
 
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +72,7 @@ public class Logup extends AppCompatActivity {
                 {
                     Toast.makeText(Logup.this, "You Have Not Registered", Toast.LENGTH_SHORT).show();
                 }
+                displayCurrentDateTime();
             }
         });
 
@@ -94,9 +99,19 @@ public class Logup extends AppCompatActivity {
                 // redirect to RegisterActivity
                 Intent intent = new Intent(getApplicationContext(), Issue.class);
                 startActivity(intent);
+
+
             }
         });
     }
+    private void displayCurrentDateTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        String currentDateTime = dateFormat.format(new Date());
+        String[] dateTimeParts = currentDateTime.split(" ");
+        String currentDate = dateTimeParts[0];
+        String currentTime = dateTimeParts[1];
+        helper1.dateTime(currentDate,currentTime);
 
+    }
 }
 
