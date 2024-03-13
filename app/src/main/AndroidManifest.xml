@@ -72,6 +72,7 @@
         <activity android:name=".Adolescent_girls_view"/>
 <activity android:name=".Adolscent_boys_view"/>
         <activity android:name=".Children_6m_3_view"/>
+        <activity android:name=".Awc"/>
 
         <activity
 
