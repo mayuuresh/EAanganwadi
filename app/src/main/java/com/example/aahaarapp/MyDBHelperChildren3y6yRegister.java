@@ -62,13 +62,13 @@ public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
         values.put(Weight, weight);
         values.put(Height_Unit, height_unit);
         values.put(Height, height);
-        values.put(Nutritional_Supplements,"");
-        values.put(Energy_Intake,"");
-        values.put(Protein_Intake,"");
-        values.put(Fat_Intake,"");
-        values.put(Food_Solids,"");
-        values.put(Hemoglobin,"");
-        values.put(Health_Service,"");
+        values.put(Nutritional_Supplements," ");
+        values.put(Energy_Intake," ");
+        values.put(Protein_Intake," ");
+        values.put(Fat_Intake," ");
+        values.put(Food_Solids," ");
+        values.put(Hemoglobin," ");
+        values.put(Health_Service," ");
         db.insert(TABLE_NAME_Child, null, values);
         db.close();
     }

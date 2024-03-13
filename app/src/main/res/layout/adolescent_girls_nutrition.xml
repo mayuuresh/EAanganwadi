@@ -20,19 +20,9 @@
             android:orientation="horizontal"
             android:background="@color/pink">
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@drawable/left_arrow"
-                android:contentDescription="Description for accessibility"
-                android:padding="8dp"
-                android:layout_marginLeft="5dp"
-                android:scaleType="fitXY"/>
-
             <TextView
                 android:id="@+id/titleTextView"
-                android:layout_width="341dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="5dp"

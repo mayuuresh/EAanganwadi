@@ -27,17 +27,20 @@ public class Pregnant_add extends AppCompatActivity {
     public String data;
     ListView userlist;
     TabLayout tabLayout;
+    String number;
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pregnant_add);
+
         tabLayout = findViewById(R.id.tabLayout);
         Add = findViewById(R.id.button6);
         userlist = findViewById(R.id.list);
         listItem = new ArrayList<>();
         helper=new MyDBHelperPregnantWomen(this);
         viewData();
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

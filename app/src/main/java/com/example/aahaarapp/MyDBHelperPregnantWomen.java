@@ -78,9 +78,9 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
 
     }
 
-    public Cursor readAllData()
+    public Cursor readAllData(String number)
     {
-        String query = "SELECT * FROM " + TABLE_NAME_Reg;
+        String query = "SELECT * FROM " + TABLE_NAME_Reg + " WHERE " + mobileNo + " = " + number;
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
