@@ -2,6 +2,7 @@ package com.example.aahaarapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -49,5 +50,12 @@ public MyDbHelperAwc(@Nullable Context context)
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+    public Cursor viewData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_awc;
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor;
     }
 }

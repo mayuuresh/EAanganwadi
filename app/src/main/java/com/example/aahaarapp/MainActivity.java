@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 1:
                         // Handle click on Tab 2
-                        Intent intent1 = new Intent(getApplicationContext(), Profile.class);
+                        Intent intent1 = new Intent(getApplicationContext(), Awc.class);
                         startActivity(intent1);
                         break;
                     case 2:
                         // Handle click on Tab 3
-                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent2 = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent2);
                         break;
                 }
