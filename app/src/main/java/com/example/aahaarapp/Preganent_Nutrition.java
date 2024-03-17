@@ -3,6 +3,7 @@ package com.example.aahaarapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -11,9 +12,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -25,9 +29,9 @@ public class Preganent_Nutrition extends AppCompatActivity {
     RadioButton r;
     Button btn;
     MyDBHelperPregnantWomen helper;
-    String nurtrition="",service="";
+    StringBuilder nurtrition = new StringBuilder();
     Button submit;
-    String value;
+    String value,item;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preganent_nutrition);
@@ -57,21 +61,22 @@ public class Preganent_Nutrition extends AppCompatActivity {
         hemoglobin = findViewById(R.id.hemo);
 
 
-        if(FalicAcid1.isSelected())
+        //get the selected checkbox in single string
+        if(FalicAcid1.isChecked())
         {
-            nurtrition=nurtrition+","+(FalicAcid1.getText().toString());
+            nurtrition=nurtrition.append(FalicAcid1.getText().toString());
         }
-        if(Iron1.isSelected())
+        if(Iron1.isChecked())
         {
-            nurtrition=nurtrition+","+(Iron1.getText().toString());
+            nurtrition=nurtrition.append(Iron1.getText().toString());
         }
-        if(Vitamin1.isSelected())
+        if(Vitamin1.isChecked())
         {
-            nurtrition=nurtrition+","+(Vitamin1.getText().toString());
+            nurtrition=nurtrition.append(Vitamin1.getText().toString());
         }
-        if(Calcium1.isSelected())
+        if(Calcium1.isChecked())
         {
-            nurtrition=nurtrition+","+(Calcium1.getText().toString());
+            nurtrition=nurtrition.append(Calcium1.getText().toString());
         }
 
 
@@ -81,6 +86,22 @@ public class Preganent_Nutrition extends AppCompatActivity {
 
         helper = new MyDBHelperPregnantWomen(this);
 
+        String[] vaccin = getResources().getStringArray(R.array.Vaccination);
+        // create an array adapter and pass the required parameter
+        // in our case pass the context, drop down layout , and array.
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.dropdown_menu, vaccin);
+        // get reference to the autocomplete text view
+        AutoCompleteTextView autocompleteTV = findViewById(R.id.autoCompleteTextView);
+        // set adapter to the autocomplete tv to the arrayAdapter
+        autocompleteTV.setAdapter(arrayAdapter);
+
+        autocompleteTV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                item = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(Preganent_Nutrition.this, "item: "+item, Toast.LENGTH_SHORT).show();
+            }
+        });
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +119,7 @@ public class Preganent_Nutrition extends AppCompatActivity {
                     r = findViewById(selectedId);
                     String radion = r.getText().toString();
 
-                    helper.updateColumns(value,radion,heightn,weightn,hemoglobinn,nurtrition,energy,protein);
+                    helper.updateColumns(value,radion,heightn,weightn,hemoglobinn,nurtrition.toString(),energy,protein,item);
                     Toast.makeText(Preganent_Nutrition.this, value, Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(getApplicationContext(), Pregnant_add.class);

@@ -91,6 +91,7 @@ import android.content.BroadcastReceiver;
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     String text = userlist.getItemAtPosition(i).toString();
+                    data = text.substring(text.indexOf("Mobile:-")+8,text.indexOf("Date of Birth")).trim();
                     Toast.makeText(LactatingMother_add.this, "" + text, Toast.LENGTH_SHORT).show();
                     Bundle bundle = new Bundle();
                     bundle.putString("number", data);
@@ -110,7 +111,6 @@ import android.content.BroadcastReceiver;
             }
             else{
                 while(cursor.moveToNext()) {
-                    data = cursor.getString(0);
                     listItem.add("Name:- " + cursor.getString(1) + "\n\nMobile:- " + cursor.getString(0) + "           Date of Birth:-" + cursor.getString(2));
                 }
 

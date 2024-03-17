@@ -25,6 +25,7 @@ public class MyDBHelper6m3y extends SQLiteOpenHelper {
     private static final String Food_Solid = "food";
     private static final String Hemoglobin = "hemoglobin";
     private static final String Health_Service = "healthService";
+    private static final String vaccination = "Vaccination";
 
     public MyDBHelper6m3y(@Nullable Context context) {
         super(context,DB_NAME,null,DB_VERSION);
@@ -45,7 +46,8 @@ public class MyDBHelper6m3y extends SQLiteOpenHelper {
                 + Fat + " TEXT , "
                 + Food_Solid + " TEXT , "
                 + Hemoglobin + " TEXT , "
-                + Health_Service + " TEXT ) ";
+                + Health_Service + " TEXT , "
+                + vaccination + " TEXT )";
 
         db.execSQL(query_lac);
     }
@@ -60,12 +62,14 @@ public class MyDBHelper6m3y extends SQLiteOpenHelper {
         values.put(Weight, weight);
         values.put(Height_unit, height_unit);
         values.put(Height, height);
-        values.put(Nutritional,"");
-        values.put(Energy,"");
-        values.put(Protein,"");
-        values.put(Fat,"");
-        values.put(Food_Solid ,"");
-        values.put(Hemoglobin ,"");
+        values.put(Nutritional," ");
+        values.put(Energy," ");
+        values.put(Protein," ");
+        values.put(Fat," ");
+        values.put(Food_Solid ," ");
+        values.put(Hemoglobin ," ");
+        values.put(Health_Service," ");
+        values.put(vaccination," ");
 
         db.insert(TABLE_NAME_Lac, null, values);
         db.close();
@@ -76,18 +80,10 @@ public class MyDBHelper6m3y extends SQLiteOpenHelper {
 
     }
 
-    public void updateColumns(String id, String value1, String value2, String value3,String value4,String value5,String value6,String value7) {
+    public void updateColumns(String id, String value1, String value2, String value3,String value4,String value5,String value6,String value7,String item) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(Nutritional, value1);
-        values.put(Energy, value2);
-        values.put(Protein, value3);
-        values.put(Fat, value4);
-        values.put(Food_Solid, value5);
-        values.put(Hemoglobin, value6);
-        values.put(Health_Service, value7);
-        db.update(TABLE_NAME_Lac, values, Mobile_number + " = ?", new String[]{id});
-        db.close();
+       String query = "UPDATE " + TABLE_NAME_Lac + " SET " + Nutritional + " = '" + value1 + "', " + Energy + " = '" + value2 + "', " + Protein + " = '" + value3 + "', " + Fat + " = '" + value4 + "', " + Food_Solid + " = '" + value5 + "', " + Hemoglobin + " = '" + value6 + "', " + Health_Service + " = '" + value7 + "', " + vaccination + " = '" + item + "' WHERE " + Mobile_number + " = " + id;
+        db.execSQL(query);
     }
 
     public Cursor readAllData()
@@ -107,6 +103,18 @@ public class MyDBHelper6m3y extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME_Lac;
         Cursor cursor = db.rawQuery(query,null);
+        return cursor;
+    }
+    public Cursor readAllData(String number)
+    {
+        String query = "SELECT * FROM " + TABLE_NAME_Lac + " WHERE " + Mobile_number + " = " + number;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null)
+        {
+            cursor = db.rawQuery(query,null);
+        }
         return cursor;
     }
 }

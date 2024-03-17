@@ -32,7 +32,6 @@ public class Children3Y6YRegister extends AppCompatActivity {
         mobileNo = findViewById(R.id.edit3);
         weight = findViewById(R.id.edit4);
         height = findViewById(R.id.edit5);
-
         btn = findViewById(R.id.submit);
         helper = new MyDBHelperChildren3y6yRegister(this);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -48,12 +47,12 @@ public class Children3Y6YRegister extends AppCompatActivity {
                         break;
                     case 1:
                         // Handle click on Tab 2
-                        Intent intent1 = new Intent(getApplicationContext(), Profile.class);
+                        Intent intent1 = new Intent(getApplicationContext(), Awc.class);
                         startActivity(intent1);
                         break;
                     case 2:
                         // Handle click on Tab 3
-                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent2 = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent2);
                         break;
                 }
@@ -82,12 +81,12 @@ public class Children3Y6YRegister extends AppCompatActivity {
                 if (selectedId != -1) {
                     r = findViewById(selectedId);
                     String heightUnitn = r.getText().toString();
-
-                    helper.childrenRegister(namestr, mothern, mobilen, weightn,heightUnitn, heightn);
+                    Toast.makeText(Children3Y6YRegister.this, namestr+mothern+mothern+weightn+heightUnitn+heightn, Toast.LENGTH_SHORT).show();
+                    helper.childrenRegister( mobilen,namestr, mothern, weightn,heightUnitn, heightn);
                     sendSms(mobilen,"Your data has been successfully registered for Children 3 year to 6 year Program.We will keep you updated with the latest information. Thank you for registering with us.");
                     Toast.makeText(Children3Y6YRegister.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(getApplicationContext(), Logup.class);
+                    Intent intent = new Intent(getApplicationContext(), Children3Y6YAdd.class);
                     startActivity(intent);
                 } else {
                     // Handle the case where no RadioButton is selected

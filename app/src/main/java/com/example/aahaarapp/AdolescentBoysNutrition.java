@@ -3,12 +3,15 @@ package com.example.aahaarapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,13 +21,16 @@ public class AdolescentBoysNutrition extends AppCompatActivity {
     RadioGroup radio;
     RadioButton r;
     Button btn;
-    MyDBHelperChildren3y6yRegister helper;
+    MyDbHelperAdolescentBoys helper;
     String mobileno="",nurtrition="",service="";
+    String item;
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState) ;
 
         setContentView(R.layout.adolescent_boys_nutrition);
+        mobileno = getIntent().getStringExtra("number");
+        Toast.makeText(this, ""+mobileno, Toast.LENGTH_SHORT).show();
         FalicAcid1 = findViewById(R.id.FalicAcid1);
         Iron1 = findViewById(R.id.Iron1);
         Vitamin1 = findViewById(R.id.Vitamin1);
@@ -74,7 +80,21 @@ public class AdolescentBoysNutrition extends AppCompatActivity {
 
         btn = findViewById(R.id.submitI);
 
-        helper = new MyDBHelperChildren3y6yRegister(this);
+        helper = new MyDbHelperAdolescentBoys(this);
+
+
+        String[] vaccin = getResources().getStringArray(R.array.Vaccination);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.dropdown_menu, vaccin);
+        AutoCompleteTextView autocompleteTV = findViewById(R.id.autoComplete);
+        autocompleteTV.setAdapter(arrayAdapter);
+
+        autocompleteTV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                item = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(AdolescentBoysNutrition.this, "item: "+item, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,10 +111,10 @@ public class AdolescentBoysNutrition extends AppCompatActivity {
                     r = findViewById(selectedId);
                     String radion = r.getText().toString();
 
-                    helper.updateColumns(mobileno,nurtrition,heightn,weightn,fatn,radion,hemoglobinn,service);
+                    helper.updateColumns(mobileno,nurtrition,heightn,weightn,fatn,radion,hemoglobinn,service,item);
                     Toast.makeText(AdolescentBoysNutrition.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(getApplicationContext(), Logup.class);
+                    Intent intent = new Intent(getApplicationContext(), AdolescentBoysAdd.class);
                     startActivity(intent);
                 } else {
                     // Handle the case where no RadioButton is selected

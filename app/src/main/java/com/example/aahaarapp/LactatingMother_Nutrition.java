@@ -3,12 +3,15 @@ package com.example.aahaarapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +23,7 @@ public class LactatingMother_Nutrition extends AppCompatActivity {
     Button btn;
     MyDBHelperLactatingMother helper;
     String nurtrition="",service="";
+    String item;
 
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +69,23 @@ public class LactatingMother_Nutrition extends AppCompatActivity {
 
         helper = new MyDBHelperLactatingMother(this);
 
+        String[] vaccin = getResources().getStringArray(R.array.Vaccination);
+        // create an array adapter and pass the required parameter
+        // in our case pass the context, drop down layout , and array.
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.dropdown_menu, vaccin);
+        // get reference to the autocomplete text view
+        AutoCompleteTextView autocompleteTV = findViewById(R.id.autoCompleteTextView);
+        // set adapter to the autocomplete tv to the arrayAdapter
+        autocompleteTV.setAdapter(arrayAdapter);
+
+        autocompleteTV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                item = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(LactatingMother_Nutrition.this, "item: "+item, Toast.LENGTH_SHORT).show();
+            }
+        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,7 +102,7 @@ public class LactatingMother_Nutrition extends AppCompatActivity {
                     r = findViewById(selectedId);
                     String radion = r.getText().toString();
 
-                    helper.updateColumns(value,radion,heightn,weightn,hemoglobinn,nurtrition,service);
+                    helper.updateColumns(value,radion,heightn,weightn,hemoglobinn,nurtrition,service,item);
                     Toast.makeText(LactatingMother_Nutrition.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(getApplicationContext(), Logup.class);

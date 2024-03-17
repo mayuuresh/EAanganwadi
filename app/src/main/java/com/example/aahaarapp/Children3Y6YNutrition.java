@@ -3,12 +3,15 @@ package com.example.aahaarapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,11 +23,13 @@ public class Children3Y6YNutrition extends AppCompatActivity {
     RadioButton r;
     Button btn;
     MyDBHelperChildren3y6yRegister helper;
-    String mobileno="",nurtrition="",service="";
+    String nurtrition="",service="";
+    String item;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.children_3y_6y_nutrition);
-        mobileno = getIntent().getStringExtra("number");
+        String value = getIntent().getStringExtra("number");
+        Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         FalicAcid1 = findViewById(R.id.FalicAcid1);
         Iron1 = findViewById(R.id.Iron1);
         Vitamin1 = findViewById(R.id.Vitamin1);
@@ -76,6 +81,19 @@ public class Children3Y6YNutrition extends AppCompatActivity {
 
         helper = new MyDBHelperChildren3y6yRegister(this);
 
+        String[] vaccin = getResources().getStringArray(R.array.Vaccination);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.dropdown_menu, vaccin);
+        AutoCompleteTextView autocompleteTV = findViewById(R.id.autoCompleteTextView);
+        autocompleteTV.setAdapter(arrayAdapter);
+
+        autocompleteTV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                item = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(Children3Y6YNutrition.this, "item: "+item, Toast.LENGTH_SHORT).show();
+            }
+        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,7 +109,7 @@ public class Children3Y6YNutrition extends AppCompatActivity {
                     r = findViewById(selectedId);
                     String radion = r.getText().toString();
 
-                    helper.updateColumns(mobileno,nurtrition,heightn,weightn,fatn,radion,hemoglobinn,service);
+                    helper.updateColumns(value,nurtrition,heightn,weightn,fatn,radion,hemoglobinn,service,item);
                     Toast.makeText(Children3Y6YNutrition.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(getApplicationContext(), Logup.class);

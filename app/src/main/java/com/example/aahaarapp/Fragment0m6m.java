@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -44,7 +45,7 @@ public class Fragment0m6m extends BottomSheetDialogFragment {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Children0M6MRegister.class);
+                Intent intent = new Intent(getActivity(), Children0M6MNutrition.class);
                 intent.putExtra("number", number);
                 startActivity(intent);
             }
@@ -53,7 +54,7 @@ public class Fragment0m6m extends BottomSheetDialogFragment {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Children0M6MNutrition.class);
+                Intent intent = new Intent(getActivity(), Children_0m_6m_view.class);
                 intent.putExtra("number", number);
                 startActivity(intent);
             }

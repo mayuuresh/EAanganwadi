@@ -48,12 +48,12 @@ public class Children6m3YRegister extends AppCompatActivity {
                         break;
                     case 1:
                         // Handle click on Tab 2
-                        Intent intent1 = new Intent(getApplicationContext(), Profile.class);
+                        Intent intent1 = new Intent(getApplicationContext(), Awc.class);
                         startActivity(intent1);
                         break;
                     case 2:
                         // Handle click on Tab 3
-                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent2 = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent2);
                         break;
                 }
@@ -88,7 +88,7 @@ public class Children6m3YRegister extends AppCompatActivity {
                     sendSms(mobilestr,"Your data has been successfully registered for Children 6 month to 3 year Program.We will keep you updated with the latest information. Thank you for registering with us.");
                     Toast.makeText(Children6m3YRegister.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(getApplicationContext(),Children0M6MAdd.class);
+                    Intent intent = new Intent(getApplicationContext(),Children6M3YAdd.class);
                     startActivity(intent);
                 } else {
                     // Handle the case where no RadioButton is selected

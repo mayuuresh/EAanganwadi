@@ -47,12 +47,12 @@ public class AdolescentGirlsAdd extends AppCompatActivity {
                         break;
                     case 1:
                         // Handle click on Tab 2
-                        Intent intent1 = new Intent(getApplicationContext(), Profile.class);
+                        Intent intent1 = new Intent(getApplicationContext(), Awc.class);
                         startActivity(intent1);
                         break;
                     case 2:
                         // Handle click on Tab 3
-                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent2 = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent2);
                         break;
                 }
@@ -72,7 +72,8 @@ public class AdolescentGirlsAdd extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String text=userlist.getItemAtPosition(i).toString();
-                Toast.makeText(AdolescentGirlsAdd.this,""+text,Toast.LENGTH_SHORT).show();
+                data = text.substring(text.indexOf("Mobile:-")+8,text.indexOf("Date of Birth")).trim();
+                Toast.makeText(AdolescentGirlsAdd.this, data, Toast.LENGTH_SHORT).show();
                 Bundle  bundle = new Bundle();
                 bundle.putString("number",data);
                 Fragment_girls v = new Fragment_girls();

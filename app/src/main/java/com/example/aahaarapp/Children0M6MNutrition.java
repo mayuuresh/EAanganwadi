@@ -3,12 +3,15 @@ package com.example.aahaarapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,11 +21,15 @@ public class Children0M6MNutrition extends AppCompatActivity {
     RadioGroup radio;
     RadioButton r;
     Button btn;
-    MyDBHelperChildren3y6yRegister helper;
-    String mobileno="",nurtrition="",service="";
+    MyDBHelper0m6m helper;;
+    StringBuilder nurtrition = new StringBuilder();
+    StringBuilder service = new StringBuilder();
+    String item;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.children_0m_6m_nutrition);
+        String value = getIntent().getStringExtra("number");
+        Toast.makeText(this, value, Toast.LENGTH_SHORT).show();
         FalicAcid1 = findViewById(R.id.FalicAcid1);
         Iron1 = findViewById(R.id.Iron1);
         Vitamin1 = findViewById(R.id.Vitamin1);
@@ -40,39 +47,54 @@ public class Children0M6MNutrition extends AppCompatActivity {
 
         if(FalicAcid1.isSelected())
         {
-            nurtrition=nurtrition+","+(FalicAcid1.getText().toString());
+            nurtrition=nurtrition.append(FalicAcid1.getText().toString());
         }
         if(Iron1.isSelected())
         {
-            nurtrition=nurtrition+","+(Iron1.getText().toString());
+            nurtrition=nurtrition.append(Iron1.getText().toString());
         }
         if(Vitamin1.isSelected())
         {
-            nurtrition=nurtrition+","+(Vitamin1.getText().toString());
+            nurtrition=nurtrition.append(Vitamin1.getText().toString());
         }
         if(Calcium1.isSelected())
         {
-            nurtrition=nurtrition+","+(Calcium1.getText().toString());
+            nurtrition=nurtrition.append(Calcium1.getText().toString());
         }
 
         if(allopath.isSelected())
         {
-            service=service+","+(allopath.getText().toString());
+            service=service.append(allopath.getText().toString());
         }
         if(homopathy.isSelected())
         {
-            service=service+","+(homopathy.getText().toString());
+            service=service.append(homopathy.getText().toString());
         }
         if (ayush.isSelected())
         {
-            service=service+","+(ayush.getText().toString());
+            service=service.append(ayush.getText().toString());
         }
 
         radio = findViewById(R.id.radioheight);
 
         btn = findViewById(R.id.submitI);
 
-        helper = new MyDBHelperChildren3y6yRegister(this);
+        helper = new MyDBHelper0m6m(this);
+
+
+        String[] vaccin = getResources().getStringArray(R.array.Vaccination);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.dropdown_menu, vaccin);
+        AutoCompleteTextView autocompleteTV = findViewById(R.id.autoComplete);
+        autocompleteTV.setAdapter(arrayAdapter);
+
+        autocompleteTV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                item = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(Children0M6MNutrition.this, "item: "+item, Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,10 +111,10 @@ public class Children0M6MNutrition extends AppCompatActivity {
                     r = findViewById(selectedId);
                     String radion = r.getText().toString();
 
-                    helper.updateColumns(mobileno,nurtrition,heightn,weightn,fatn,radion,hemoglobinn,service);
+                    helper.updateColumns(value,nurtrition.toString(),heightn,weightn,fatn,radion,hemoglobinn,service.toString(),item);
                     Toast.makeText(Children0M6MNutrition.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(getApplicationContext(), Logup.class);
+                    Intent intent = new Intent(getApplicationContext(), Children0M6MAdd.class);
                     startActivity(intent);
                 } else {
                     // Handle the case where no RadioButton is selected

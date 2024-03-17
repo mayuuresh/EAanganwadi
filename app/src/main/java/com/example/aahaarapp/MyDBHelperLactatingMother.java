@@ -33,6 +33,7 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
     private static final String Hemoglobin = "hemoglobin";
     private static final String Provided_With = "provided";
     private static final String Health_Service = "healthService";
+    private static final String vaccination = "Vaccination";
 
 
     public MyDBHelperLactatingMother(@Nullable Context context) {
@@ -53,7 +54,8 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
                 + Weight + " TEXT , "
                 + Hemoglobin + " TEXT , "
                 + Provided_With + " TEXT , "
-                + Health_Service + " TEXT ) ";
+                + Health_Service + " TEXT , "
+                + vaccination + " TEXT ) ";
 
         db.execSQL(query_lac);
     }
@@ -74,6 +76,7 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
         values.put(Hemoglobin,"");
         values.put(Provided_With ,"");
         values.put(Health_Service ,"");
+        values.put(vaccination," ");
 
         db.insert(TABLE_NAME_Lac, null, values);
         db.close();
@@ -105,7 +108,7 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void updateColumns(String value, String radion, String value2, String value3, String value4, String value5, String value6) {
+    public void updateColumns(String value, String radion, String value2, String value3, String value4, String value5, String value6,String item) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Height_Unit, radion);
@@ -114,6 +117,8 @@ public class MyDBHelperLactatingMother extends SQLiteOpenHelper {
         values.put(Hemoglobin,value4);
         values.put(Provided_With, value5);
         values.put(Health_Service, value6);
+        values.put(vaccination,item);
+
         db.update(TABLE_NAME_Lac, values, Mobile_number + " = ?", new String[]{value});
         db.close();
     }

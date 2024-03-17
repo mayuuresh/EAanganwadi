@@ -28,7 +28,7 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
     private static final String unit = "Height_Unit";
     private static final String height = "Height";
     private static final String weight = "Weight";
-
+    private static final String vaccination = "Vaccination";
 
     public MyDBHelperAdolescentGirls(@Nullable Context context) {
         super(context,DB_NAME,null, DB_VERSION);
@@ -49,7 +49,9 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
                 + serrvice + " TEXT, "
                 + unit + " TEXT, "
                 + height + " TEXT, "
-                + weight + " TEXT)";
+                + weight + " TEXT,"
+                + vaccination + " TEXT )";
+
         db.execSQL(query_reg);
     }
 
@@ -66,22 +68,9 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
         values.put(yob, yob1);
         values.put(father, father1);
         values.put(mother, mother1);
-        values.put(cycle, " ");
-        values.put(iron, " ");
-        values.put(hemo, " ");
-        values.put(serrvice, " ");
-        values.put(unit, " ");
-        values.put(height, " ");
-        values.put(weight, " ");
+        db.insert(TABLE_NAME, null, values);
+        db.close();
 
-        try {
-            db.insert(TABLE_NAME, null, values);
-        } catch (Exception e) {
-            // Handle the exception here
-            e.printStackTrace(); // Print the stack trace for debugging
-        } finally {
-            db.close();
-        }
     }
 
     public Cursor readAllData()
@@ -96,8 +85,7 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
         }
         return cursor;
     }
-    public void updateColumns(String id,String cycle1,
-                             String iron1,String hemo1,String serrvice1,String unit1,String height1,String weight1)
+    public void updateColumns(String id, String cycle1, String iron1, String hemo1, String serrvice1, String unit1, String height1, String weight1, String item)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -109,6 +97,7 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
         values.put(unit,unit1);
         values.put(height,height1);
         values.put(weight,weight1);
+        values.put(vaccination,item);
 
         db.update(TABLE_NAME, values, mobileNo + " = ?", new String[]{id});
         db.close();
@@ -118,6 +107,19 @@ public class MyDBHelperAdolescentGirls extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
         Cursor cursor = db.rawQuery(query,null);
+        return cursor;
+    }
+
+    public Cursor readAllData(String number)
+    {
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + mobileNo + " = " + number;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null)
+        {
+            cursor = db.rawQuery(query,null);
+        }
         return cursor;
     }
 }

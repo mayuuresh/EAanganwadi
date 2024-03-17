@@ -54,12 +54,12 @@ public class Pregnant_add extends AppCompatActivity {
                         break;
                     case 1:
                         // Handle click on Tab 2
-                        Intent intent1 = new Intent(getApplicationContext(), Profile.class);
+                        Intent intent1 = new Intent(getApplicationContext(), Awc.class);
                         startActivity(intent1);
                         break;
                     case 2:
                         // Handle click on Tab 3
-                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent2 = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent2);
                         break;
                 }
@@ -79,6 +79,7 @@ public class Pregnant_add extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             String text=userlist.getItemAtPosition(i).toString();
+            data = text.substring(text.indexOf("Mobile:-")+8,text.indexOf("Date of Birth")).trim();
             Toast.makeText(Pregnant_add.this,""+text,Toast.LENGTH_SHORT).show();
             Bundle  bundle = new Bundle();
             bundle.putString("number",data);
@@ -105,7 +106,6 @@ public class Pregnant_add extends AppCompatActivity {
         }
         else{
             while(cursor.moveToNext()){
-                data=cursor.getString(0);
                 listItem.add("Name:-"+cursor.getString(1)+"\nMobile:- "+cursor.getString(0)+"           Date of Birth:-"+cursor.getString(2));
             }
             adapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,listItem);

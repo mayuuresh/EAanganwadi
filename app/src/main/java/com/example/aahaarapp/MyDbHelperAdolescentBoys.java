@@ -29,6 +29,7 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
     private static final String solids = "Food_Solids";
     private static final String hemo = "Hemoglobin";
     private static final String service = "Service";
+    private static final String vaccination = "Vaccination";
 
 
     public MyDbHelperAdolescentBoys(@Nullable Context context) {
@@ -50,7 +51,9 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
                 + fat + " TEXT, "
                 + solids + " TEXT, "
                 + hemo + " TEXT, "
-                + service + " TEXT)";
+                + service + " TEXT, "
+                + vaccination + " TEXT )";
+
         db.execSQL(query_reg);
     }
 
@@ -75,14 +78,16 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
         values.put(solids," ");
         values.put(hemo," ");
         values.put(service," ");
+        values.put(vaccination," ");
+
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
-    public void updateColumns(String cycle1,String iron1,String hemo1,String serrvice1,String unit1,String height1,String weight1)
+    public void updateColumns(String id,String cycle1, String iron1, String hemo1, String serrvice1, String unit1, String height1, String weight1, String item)
     {
+
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-
         values.put(supplement,cycle1);
         values.put(energy,iron1);
         values.put(protin,hemo1);
@@ -90,13 +95,14 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
         values.put(solids,unit1);
         values.put(hemo,height1);
         values.put(service,weight1);
+        values.put(vaccination,item);
 
-        db.insert(TABLE_NAME, null, values);
+        db.update(TABLE_NAME, values, mobileNo + " = ?", new String[]{id});
         db.close();
     }
-    public Cursor readAllData()
+    public Cursor readAllData(String number)
     {
-        String query = "SELECT * FROM " + TABLE_NAME;
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + mobileNo + " = " + number;
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
@@ -106,6 +112,7 @@ public class MyDbHelperAdolescentBoys extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
     public Cursor viewData()
     {
         SQLiteDatabase db = this.getReadableDatabase();

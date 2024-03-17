@@ -50,12 +50,12 @@ public class AdolescentGirlsRegister extends AppCompatActivity
                         break;
                     case 1:
                         // Handle click on Tab 2
-                        Intent intent1 = new Intent(getApplicationContext(), Profile.class);
+                        Intent intent1 = new Intent(getApplicationContext(), Awc.class);
                         startActivity(intent1);
                         break;
                     case 2:
                         // Handle click on Tab 3
-                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent2 = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent2);
                         break;
                 }
@@ -81,17 +81,13 @@ public class AdolescentGirlsRegister extends AppCompatActivity
                     String father=father1.getText().toString();
                     String mother=mother1.getText().toString();
 
-
-                    // Now, you have the text of the checked RadioButtons
-                    // Proceed with further processing
-
                     helper.registeruser(name, dob, yob, mobile, father,mother);
                     sendSms(mobile,"Your data has been successfully registered for Adolescent Girls Program.We will keep you updated with the latest information. Thank you for registering with us.");
 
                     Toast.makeText(AdolescentGirlsRegister.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
 
 
-                    Intent intent = new Intent(getApplicationContext(), Logup.class);
+                    Intent intent = new Intent(getApplicationContext(), AdolescentGirlsAdd.class);
                     startActivity(intent);
 
 

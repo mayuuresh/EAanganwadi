@@ -26,6 +26,7 @@ public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
     private static final String Food_Solids = "FoodSolids";
     private static final String Hemoglobin = "Hemoglobin";
     private static final String Health_Service = "HealthService";
+    private static final String vaccination = "Vaccination";
 
 
     public MyDBHelperChildren3y6yRegister(@Nullable Context context) {
@@ -47,36 +48,31 @@ public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
                 + Fat_Intake + " TEXT , "
                 + Food_Solids + " TEXT , "
                 + Hemoglobin + " TEXT , "
-                + Health_Service + " TEXT )";
+                + Health_Service + " TEXT , "
+                + vaccination + " TEXT )";
 
         db.execSQL(query_child);
     }
 
     public void childrenRegister(String mobile,String name,String mother_name,String weight, String height_unit,String height)
     {
+        System.out.println("Inside childrenRegister"+mobile+name+mother_name+weight+height_unit+height);
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Mobile,mobile);
-        values.put(Name, name);
-        values.put(Mother_Name, mother_name);
-        values.put(Weight, weight);
-        values.put(Height_Unit, height_unit);
-        values.put(Height, height);
-        values.put(Nutritional_Supplements," ");
-        values.put(Energy_Intake," ");
-        values.put(Protein_Intake," ");
-        values.put(Fat_Intake," ");
-        values.put(Food_Solids," ");
-        values.put(Hemoglobin," ");
-        values.put(Health_Service," ");
-        db.insert(TABLE_NAME_Child, null, values);
+        values.put(Name,name);
+        values.put(Mother_Name,mother_name);
+        values.put(Weight,weight);
+        values.put(Height_Unit,height_unit);
+        values.put(Height,height);
+        db.insert(TABLE_NAME_Child,null,values);
         db.close();
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-    public void updateColumns(String id, String value1, String value2, String value3,String value4,String value5,String value6,String value7) {
+    public void updateColumns(String id, String value1, String value2, String value3, String value4, String value5, String value6, String value7,String item) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Nutritional_Supplements, value1);
@@ -86,13 +82,15 @@ public class MyDBHelperChildren3y6yRegister extends SQLiteOpenHelper {
         values.put(Food_Solids, value5);
         values.put(Hemoglobin, value6);
         values.put(Health_Service, value7);
+        values.put(vaccination,item);
+
         db.update(TABLE_NAME_Child, values, Mobile + " = ?", new String[]{id});
         db.close();
     }
 
-    public Cursor readAllData()
+    public Cursor readAllData(String number)
     {
-        String query = "SELECT * FROM " + TABLE_NAME_Child;
+        String query = "SELECT * FROM " + TABLE_NAME_Child + " WHERE " + Mobile + " = " + number;
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;

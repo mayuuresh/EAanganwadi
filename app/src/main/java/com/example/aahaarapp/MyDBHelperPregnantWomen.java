@@ -28,6 +28,7 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
     private static final String Nutritional_Supplements = "Nutrition";
     private static final String Energy= "energy";
     private static final String protein = "protein";
+    private static final String vaccination = "Vaccination";
     public MyDBHelperPregnantWomen(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -48,7 +49,9 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
                 + Hemoglobin + " TEXT, "
                 + Nutritional_Supplements + " TEXT, "
                 + Energy + " TEXT, "
-                + protein + " TEXT )";
+                + protein + " TEXT ,"
+                + vaccination + " TEXT )";
+
         db.execSQL(Query);
 
     }
@@ -69,6 +72,8 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
         values.put(Nutritional_Supplements, "");
         values.put(Energy, "");
         values.put(protein, "");
+        values.put(vaccination, " ");
+
         db.insert(TABLE_NAME_Reg, null, values);
         db.close();
     }
@@ -98,7 +103,7 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void updateColumns(String value, String radion, String value2, String value3, String value4, String value5, String value6, String value7) {
+    public void updateColumns(String value, String radion, String value2, String value3, String value4, String value5, String value6, String value7,String item) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(HeightUnit, radion);
@@ -108,6 +113,8 @@ public class MyDBHelperPregnantWomen extends SQLiteOpenHelper {
         values.put(Nutritional_Supplements, value5);
         values.put(Energy, value6);
         values.put(protein, value7);
+        values.put(vaccination,item);
+
         db.update(TABLE_NAME_Reg, values, mobileNo + " = ?", new String[]{value});
         db.close();
     }
